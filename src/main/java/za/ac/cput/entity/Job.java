@@ -9,7 +9,7 @@ package za.ac.cput.entity;
 
 public class Job {
 
-    private int jobId;
+    private String jobId;
     private String jobName;
     private String jobDescription;
 
@@ -22,7 +22,7 @@ public class Job {
         this.jobDescription = builder.jobDescription;
     }
 
-    public int getJobId() {
+    public String getJobId() {
         return jobId;
     }
 
@@ -46,7 +46,7 @@ public class Job {
     public static class Builder {
 
         private String jobName, jobDescription;
-        private int jobId;
+        private String jobId;
 
         public Builder setJobName(String jobName) {
             this.jobName = jobName;
@@ -60,7 +60,7 @@ public class Job {
             return this;
         }
 
-        public Builder setJobId(int jobId) {
+        public Builder setJobId(String jobId) {
             this.jobId = jobId;
 
             return this;
