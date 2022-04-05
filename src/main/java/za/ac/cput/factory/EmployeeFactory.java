@@ -8,12 +8,14 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.entity.Employee;
+import za.ac.cput.util.genericHelper;
 
 public class EmployeeFactory {
 
     public static Employee createEmployee(int employeeId, String firstName, String lastName) {
 
-        Employee employee = new Employee.Builder().setEmployeeId(employeeId).
+        String employeeID = genericHelper.generateId();
+        Employee employee = new Employee.Builder().setEmployeeId(employeeID).
                                         setFirstName(firstName).
                                         setLastName(lastName).
                                         build();
