@@ -14,7 +14,11 @@ public class JobFactory {
 
     public static Job createJob(int jobId, String jobName, String jobDescription) {
 
+        if (genericHelper.isNullOrEmpty(jobName) || genericHelper.isNullOrEmpty(jobDescription))
+            return null;
+
         String jobID = genericHelper.generateId();
+
         Job job = new Job.Builder().setJobId(jobID).
                                     setJobName(jobName).
                                     setJobDescription(jobDescription).
