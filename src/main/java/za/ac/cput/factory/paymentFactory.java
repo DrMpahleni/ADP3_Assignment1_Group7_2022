@@ -14,7 +14,11 @@ public class paymentFactory {
 
     public static Payment createPayment(String paymentId, String customerId, String orderId, String paymentType, int amount) {
 
+        if (genericHelper.isNullOrEmpty(orderId) || genericHelper.isNullOrEmpty(paymentId))
+            return null;
+
         String paymentID = genericHelper.generateId();
+
         Payment payment = new Payment.Builder().setPaymentId(paymentID).
                                                 setCustomerId(customerId).
                                                 setOrderId(orderId).
