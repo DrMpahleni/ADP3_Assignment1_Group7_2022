@@ -10,14 +10,24 @@ public class Ingredients {
     private String ingredientType;
     private int amount;
 
-
     private Ingredients(Builder builder) {
         this.ingredientName = builder.ingredientName;
         this.ingredientType = builder.ingredientType;
         this.amount = builder. amount;
 }
 
-    public Ingredients(Ingredients ingredients) {
+    public String getIngredientName(){
+        return ingredientName;
+
+    }
+    public String getIngredientType(){
+        return ingredientType;
+    }
+
+    public int getAmount() {
+
+        return amount;
+
     }
 
     @Override
@@ -27,47 +37,41 @@ public class Ingredients {
                 "ingredientType" + ingredientType +
                 "amount" + amount +
                 '}';
-    }
-    public String getIngredientName(){
-        return ingredientName;
 
     }
-    public String getIngredientType(){
-        return ingredientType;
-    }
- public int getAmount() {
-        return amount;
-    }
-    public static class Builder{
+    public static class Builder {
         private String ingredientName;
         private String ingredientType;
         private int amount;
-}
 
-    public Ingredients setIngredientName(String ingredientName) {
-        this.ingredientName = ingredientName;
+        public Builder setIngredientName(String ingredientName) {
+            this.ingredientName = ingredientName;
 
-        return this;
+            return this;
+
     }
-    public Ingredients setIngredientType(String ingredientType) {
+    public Builder setIngredientType(String ingredientType) {
         this.ingredientType = ingredientType;
 
         return this;
     }
-    public Ingredients setAmount(int amount) {
+    public Builder setAmount(int amount) {
         this.amount = amount;
 
         return this;
     }
     public Ingredients build() {
         return new Ingredients(this);
+
     }
-    public Ingredients copy(Ingredients ingredients) {
+    public Builder copy(Ingredients ingredients) {
         this.ingredientName = ingredients.ingredientName;
         this.ingredientType = ingredients.ingredientType;
         this.amount = ingredients.amount;
 
         return this;
+
+    }
 
     }
 }

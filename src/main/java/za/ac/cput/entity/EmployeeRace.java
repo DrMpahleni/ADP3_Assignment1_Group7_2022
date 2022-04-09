@@ -7,7 +7,7 @@ Due date: 10 April 2022
  */
 
 public class EmployeeRace {
-    private int raceId;
+    private String raceId;
     private String raceName;
 
     private EmployeeRace(Builder builder) {
@@ -16,45 +16,50 @@ public class EmployeeRace {
 
     }
 
-    public EmployeeRace(EmployeeRace employeeRace) {
+    public String getRaceId() {
+        return raceId;
+
+    }
+
+    public String getRaceName() {
+
+        return raceName;
     }
 
     @Override
     public String toString() {
-    return "EmployeeRace{" +
-            "raceId" + raceId +
-            "raceName" + raceName +
-            '}';
- }
-    public int getRaceId(){
-        return raceId;
-
+        return "EmployeeRace{" +
+                "raceId" + raceId +
+                "raceName" + raceName +
+                '}';
     }
-    public String getRaceName(){
-        return raceName;
+
+    public static class Builder {
+        private String raceId;
+        private String raceName;
+
+        public Builder setRaceId(String raceID) {
+            this.raceId = raceId;
+            return this;
+
+        }
+
+        public Builder setRaceName(String raceName) {
+            this.raceName = raceName;
+
+            return this;
+        }
+
+        public EmployeeRace build() {
+            return new EmployeeRace(this);
+        }
+
+        public Builder copy(EmployeeRace employeeRace) {
+            this.raceId = employeeRace.raceId;
+            this.raceName = employeeRace.raceName;
+
+            return this;
+
+        }
     }
-  public static class Builder{
-      private int raceId;
-      private String raceName;
-  }
-  public EmployeeRace setRaceId(int raceId) {
-        this.raceId = raceId;
-
-        return this;
-  }
-  public EmployeeRace setRaceName(String raceName) {
-        this.raceName = raceName;
-
-                return this;
-  }
-  public EmployeeRace build() {
-        return new EmployeeRace(this);
-  }
-  public EmployeeRace copy(EmployeeRace employeeRace) {
-      this.raceId = employeeRace.raceId;
-      this.raceName = employeeRace.raceName;
-
-      return this;
-
-  }
 }

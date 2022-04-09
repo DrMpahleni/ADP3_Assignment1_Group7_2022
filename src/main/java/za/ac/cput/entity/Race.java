@@ -5,52 +5,57 @@ Entity for Race
 Due date: 10 April 2022
 */
 public class Race {
+    private String id;
+    private String name;
 
-        private int id;
-        private String name;
+    private Race(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
 
-        private Race(Builder builder) {
-            this.id = builder.id;
-            this.name = builder.name;
+    }
 
-        }
+    public String getId() {
+        return id;
 
-    public Race(Race race) {
+    }
+
+    public String getName() {
+
+        return name;
     }
 
     @Override
-        public String toString() {
-            return "Race{" +
-                    "id" + id +
-                    "name" + name +
-                    '}';
-        }
-            public int getId(){
-                return id;
+    public String toString() {
+        return "Race{" +
+                ", id" + id +
+                ", name =" + name +
+                '}';
+    }
 
-        }
-        public String getName(){
-            return name;
-        }
 
-        public static class Builder{
-            private int id;
-            private String name;
-        }
-        public Race setId(int id) {
+    public static class Builder {
+        private String id;
+        private String name;
+
+        public Builder setId(String id) {
             this.id = id;
 
             return this;
+
         }
-        public Race setName(String name) {
+
+        public Builder setName(String name) {
             this.name = name;
 
             return this;
         }
-        public Race build(){
+
+        public Race build() {
+
             return new Race(this);
         }
-        public Race copy(Race race) {
+
+        public Builder copy(Race race) {
             this.id = race.id;
             this.name = race.name;
 
@@ -58,4 +63,4 @@ public class Race {
 
         }
     }
-
+}

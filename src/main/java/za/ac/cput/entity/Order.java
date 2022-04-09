@@ -6,7 +6,8 @@ Due date: 10 April 2022
 */
 
 public class Order {
-   private int orderId;
+
+   private String orderId;
    private String orderItem;
    private String date;
    private double amount;
@@ -18,8 +19,21 @@ public class Order {
         this.amount = builder.amount;
 
     }
+    public String getOrderId()
+    {
+        return orderId;
+    }
+    public String getOrderItem(){
+        return orderItem;
 
-    public Order(Order order) {
+    }
+    public String getDate(){
+
+        return date;
+    }
+    public double getAmount() {
+
+        return amount;
     }
 
     @Override
@@ -31,57 +45,47 @@ public class Order {
                 "amount" +
                 '}';
     }
-    public int getOrderId() {
-        return orderId;
-    }
-        public String getOrderItem(){
-            return orderItem;
 
-}
-    public String getDate(){
-        return date;
-    }
-    public double getAmount() {
-        return amount;
-    }
-    public static class Builder{
-        private int orderId;
+    public static class Builder {
+        private String orderId;
         private String orderItem;
         private String date;
         private double amount;
-    }
-    public Order setOrderId(int orderId) {
-        this.orderId = orderId;
 
-        return this;
-    } 
-    public Order setOrderItem(String orderItem) {
+        public Builder setOrderId(String orderID) {
+         this.orderId = orderId;
+         return this;
+
+    }
+    public Builder setOrderItem(String orderItem) {
         this.orderItem = orderItem;
 
         return this;
     }
-    public Order setDate(String date) {
+    public Builder setDate(String date) {
         this.date = date;
         
         return this;
     }
     
-    public Order setAmount(double amount) {
+    public Builder setAmount(double amount) {
         this.amount = amount;
         
         return this;
     }
 
     public Order build() {
-        return new Order(this);
+            return new Order(this);
     }
-    public Order copy(Order order) {
+    public Builder copy(Order order) {
         this.orderId = order.orderId;
         this.orderItem = order.orderItem;
         this.date = order.date;
         this.amount = order.amount;
 
         return this;
+
+    }
 
     }
 }
