@@ -29,8 +29,8 @@ public class EmployeeRace {
     @Override
     public String toString() {
         return "EmployeeRace{" +
-                "raceId" + raceId +
-                "raceName" + raceName +
+                " Race Id " + raceId + '\'' +
+                "Race Name " + raceName + '\'' +
                 '}';
     }
 
