@@ -30,9 +30,9 @@ public class tableRepository {
     }
 
 
-    public Table read(String tblNum) {
+    public Table read(Integer tblNum) {
         Table table = tableDB.stream()
-                .filter(e -> e.getTblNum().equals(tblNum))
+                .filter(e -> e.getTblNum() == tblNum)
                 .findAny()
                 .orElse(null);
         return table;
@@ -50,7 +50,7 @@ public class tableRepository {
     }
 
 
-    public boolean delete(String tblNum) {
+    public boolean delete(Integer tblNum) {
         Table tableToDelete = read(tblNum);
         if(tableToDelete == null)
             return false;

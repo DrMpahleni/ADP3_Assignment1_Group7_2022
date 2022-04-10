@@ -22,7 +22,7 @@ public class Table {
 
     }
 
-    public String getTblNum() {
+    public int getTblNum() {
         return tblNum;
     }
 
