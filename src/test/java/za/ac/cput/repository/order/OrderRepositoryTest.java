@@ -1,7 +1,6 @@
 package za.ac.cput.repository.order;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.EmployeeRace;
 import za.ac.cput.entity.Order;
 import za.ac.cput.factory.OrderFactory;
 
@@ -10,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class OrderRepositoryTest {
     private static OrderRepository repository = OrderRepository.getRepository();
-    private static Order order = OrderFactory.createOrder(789, "pizza", "20,12,2021");
+    private static Order order = OrderFactory.createOrder("789", "pizza", "20 April",12);
 
     @Test
     void a_create(){
@@ -45,8 +44,4 @@ class OrderRepositoryTest {
         System.out.println("Show all: ");
         System.out.println(repository.getAll());
     }
-}
-
-
-
 }
