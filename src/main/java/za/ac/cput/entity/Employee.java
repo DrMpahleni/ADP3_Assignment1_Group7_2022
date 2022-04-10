@@ -25,14 +25,17 @@ public class Employee {
     }
 
     public String getEmployeeId() {
+
         return employeeId;
     }
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
