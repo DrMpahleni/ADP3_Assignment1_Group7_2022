@@ -1,7 +1,5 @@
 package za.ac.cput.entity;
 
-import java.lang.module.ModuleDescriptor;
-
 public class EmployeeContact {
     private String  employeeId;
     private int contactTypeId;
@@ -11,9 +9,9 @@ public class EmployeeContact {
 
     }
     private EmployeeContact (Builder builder){
-    this.employeeId = builder.employeedId;
-    this.contactTypeId = builder.contactTypeId;
-    this.contact = builder.contact;
+        this.employeeId = builder.employeedId;
+        this.contactTypeId = builder.contactTypeId;
+        this.contact = builder.contact;
     }
 
     public String getEmployeeId() {
