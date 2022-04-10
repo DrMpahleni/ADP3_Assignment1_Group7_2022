@@ -1,6 +1,6 @@
 package za.ac.cput.entity;
 
-public class ConntactType {
+public class ContactType {
     private String Id;
     private String name;
 
