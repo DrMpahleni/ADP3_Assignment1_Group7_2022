@@ -12,7 +12,7 @@ public class ManagerFactory {
 
     public static Manager createManager(int positionID,  String firstName, String lastName,String phoneNo, String emailAddress) {
 
-        int managerID = genericHelper.generatId();
+        int managerID = genericHelper.generateIntId();
         Manager manager= new Manager.Builder()
                 .setManagerID(managerID)
                 .setPositionID(positionID)
