@@ -10,7 +10,7 @@ package za.ac.cput.entity;
 
 public class Employee {
 
-    private String employeeId;
+    private int employeeId;
     private String firstName;
     private String lastName;
 
