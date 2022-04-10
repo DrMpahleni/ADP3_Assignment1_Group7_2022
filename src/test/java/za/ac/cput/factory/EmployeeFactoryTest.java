@@ -23,7 +23,7 @@ class EmployeeFactoryTest {
 
     @BeforeEach
     void setUp() {
-        Employee employee1 = new Employee.Builder().setFirstName("Mike").build();
+        Employee employee1 = new Employee.Builder().setFirstName("Luke").build();
         Employee employee2 = employee1;
     }
 
