@@ -12,7 +12,7 @@ public class SupplierFactory {
 
     public static Supplier createSupplier(String supplierName,String supplierEmail,String supplierPhone,String supplierAddress) {
 
-        int supplierID = genericHelper.generatId();
+        int supplierID = genericHelper.generateIntId();
         Supplier supplier= new Supplier.Builder()
                 .setSupplierID(supplierID)
                 .setSupplierName(supplierName)
