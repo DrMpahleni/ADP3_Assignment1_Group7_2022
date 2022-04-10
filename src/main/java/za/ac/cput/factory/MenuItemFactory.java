@@ -12,7 +12,7 @@ public class MenuItemFactory {
 
     public static MenuItem createMenuItem(String portion,Double price) {
 
-        int menuItemID = genericHelper.generatId();
+        int menuItemID = genericHelper.generateIntId();
         MenuItem menuItem= new MenuItem.Builder()
                 .setMenuItemID(menuItemID)
                 .setPortion(portion)

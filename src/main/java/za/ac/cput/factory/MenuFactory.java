@@ -12,7 +12,7 @@ public class MenuFactory {
 
     public static Menu createMenu(String name) {
 
-        int menuID = genericHelper.generatId();
+        int menuID = genericHelper.generateIntId();
         Menu menu= new Menu.Builder()
                 .setMenuID(menuID)
                 .setName(name)
