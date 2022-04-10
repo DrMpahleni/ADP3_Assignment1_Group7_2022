@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class employeeRepositoryTest {
 
     private static employeeRepository repository = employeeRepository.getRepository();
-    private static Employee employee = EmployeeFactory.createEmployee(0, "Bob", "John");
+    private static Employee employee = EmployeeFactory.createEmployee("Bob", "John");
 
     @Test
     void create() {
@@ -27,7 +27,7 @@ class employeeRepositoryTest {
 
     @Test
     void read() {
-        Employee read = repository.read(employee.getEmployeeId());
+        Employee read = repository.read(employee.getFirstName());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -41,7 +41,7 @@ class employeeRepositoryTest {
 
     @Test
     void delete() {
-        boolean deleted = repository.delete(employee.getEmployeeId());
+        boolean deleted = repository.delete(employee.getFirstName());
         assertNotNull(deleted);
         System.out.println("Delete: " + deleted);
     }

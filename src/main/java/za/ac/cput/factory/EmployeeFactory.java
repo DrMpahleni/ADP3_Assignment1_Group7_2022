@@ -12,14 +12,14 @@ import za.ac.cput.util.genericHelper;
 
 public class EmployeeFactory {
 
-    public static Employee createEmployee(int employeeId, String firstName, String lastName) {
+    public static Employee createEmployee( String firstName, String lastName) {
 
         if (genericHelper.isNullOrEmpty(firstName) || genericHelper.isNullOrEmpty(lastName))
             return null;
 
-        String employeeID = genericHelper.generateId();
+        int employeeId = genericHelper.generateIntId();
 
-        Employee employee = new Employee.Builder().setEmployeeId(employeeID).
+        Employee employee = new Employee.Builder().setEmployeeId(employeeId).
                                         setFirstName(firstName).
                                         setLastName(lastName).
                                         build();

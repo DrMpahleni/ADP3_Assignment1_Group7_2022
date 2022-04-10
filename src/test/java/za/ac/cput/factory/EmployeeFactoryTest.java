@@ -30,7 +30,7 @@ class EmployeeFactoryTest {
     @Test
     public void test() {
 
-        Employee employee = EmployeeFactory.createEmployee(001, "Ian", "Louw");
+        Employee employee = EmployeeFactory.createEmployee("Ian", "Louw");
         System.out.println(employee.toString());
         assertNotNull(employee);
     }
