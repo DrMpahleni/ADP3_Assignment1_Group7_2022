@@ -33,9 +33,9 @@ public class jobRepository implements IJobRepository {
     }
 
     @Override
-    public Job read (String jobId) {
+    public Job read (Integer jobId) {
         Job job = jobDB.stream()
-                .filter(e -> e.getJobId().equals(jobId))
+                .filter(e -> e.getJobId() == jobId)
                 .findAny()
                 .orElse(null);
         return job;
@@ -53,7 +53,7 @@ public class jobRepository implements IJobRepository {
     }
 
     @Override
-    public boolean delete (String jobId) {
+    public boolean delete (Integer jobId) {
         Job jobToDelete = read(jobId);
         if(jobToDelete == null)
             return false;

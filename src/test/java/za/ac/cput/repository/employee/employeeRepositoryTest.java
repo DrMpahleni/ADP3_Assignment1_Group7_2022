@@ -27,7 +27,7 @@ class employeeRepositoryTest {
 
     @Test
     void read() {
-        Employee read = repository.read(employee.getFirstName());
+        Employee read = repository.read(employee.getEmployeeId());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -41,7 +41,7 @@ class employeeRepositoryTest {
 
     @Test
     void delete() {
-        boolean deleted = repository.delete(employee.getFirstName());
+        boolean deleted = repository.delete(employee.getEmployeeId());
         assertNotNull(deleted);
         System.out.println("Delete: " + deleted);
     }

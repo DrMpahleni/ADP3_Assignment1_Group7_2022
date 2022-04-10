@@ -12,7 +12,7 @@ import za.ac.cput.repository.IRepository;
 
 import java.util.Set;
 
-public interface IEmployeeRepository extends IRepository<Employee, String> {
+public interface IEmployeeRepository extends IRepository<Employee, Integer> {
 
     public Set<Employee> getAll();
 }

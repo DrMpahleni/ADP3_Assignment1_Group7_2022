@@ -13,7 +13,7 @@ import za.ac.cput.repository.employee.impl.IEmployeeRepository;
 import java.util.HashSet;
 import java.util.Set;
 
-public class employeeRepository implements IEmployeeRepository {
+public class employeeRepository implements IEmployeeRepository{
 
     private static employeeRepository repository = null;
     private Set<Employee> employeeDB = null;
@@ -38,13 +38,16 @@ public class employeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public Employee read(String employeeId) {
+    public Employee read(Integer employeeId) {
+
         Employee employee = employeeDB.stream()
-                .filter(e -> e.getEmployeeId().equals(employeeId))
+                .filter(e -> e.getEmployeeId() == employeeId)
                 .findAny()
                 .orElse(null);
         return employee;
     }
+
+
 
     @Override
     public Employee update(Employee employee){
@@ -58,7 +61,7 @@ public class employeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public boolean delete(String employeeId) {
+    public boolean delete(Integer employeeId) {
         Employee employeeToDelete = read(employeeId);
             if(employeeToDelete == null)
                 return false;

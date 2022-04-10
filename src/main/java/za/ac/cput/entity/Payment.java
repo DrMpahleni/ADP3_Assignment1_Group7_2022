@@ -8,7 +8,7 @@
 package za.ac.cput.entity;
 
 public class Payment {
-    private String paymentId;
+    private int paymentId;
     private String customerId;
     private String orderID;
     private int amount;
@@ -25,7 +25,7 @@ public class Payment {
         this.amount = builder.amount;
     }
 
-    public String getPaymentId() {
+    public int getPaymentId() {
         return paymentId;
     }
 
@@ -57,10 +57,10 @@ public class Payment {
     }
 
     public static class Builder {
-        private String paymentId, customerId, orderId, paymentType;
-        private int amount;
+        private String customerId, orderId, paymentType;
+        private int paymentId, amount;
 
-        public Builder setPaymentId(String paymentId) {
+        public Builder setPaymentId(int paymentId) {
             this.paymentId = paymentId;
 
             return this;
@@ -98,7 +98,7 @@ public class Payment {
             this.paymentId = payment.paymentId;
             this.customerId = payment.customerId;
             this.orderId = payment.orderID;
-            this.paymentId = payment.paymentType;
+            this.paymentType = payment.paymentType;
             this.amount = payment.amount;
 
             return this;
