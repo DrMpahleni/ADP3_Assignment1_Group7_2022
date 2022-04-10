@@ -14,7 +14,11 @@ public class EmployeeFactory {
 
     public static Employee createEmployee(int employeeId, String firstName, String lastName) {
 
+        if (genericHelper.isNullOrEmpty(firstName) || genericHelper.isNullOrEmpty(lastName))
+            return null;
+
         String employeeID = genericHelper.generateId();
+
         Employee employee = new Employee.Builder().setEmployeeId(employeeID).
                                         setFirstName(firstName).
                                         setLastName(lastName).
