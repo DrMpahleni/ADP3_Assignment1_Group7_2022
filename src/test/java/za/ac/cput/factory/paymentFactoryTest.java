@@ -30,7 +30,7 @@ class paymentFactoryTest {
     @Test
     public void test() {
 
-        Payment payment = paymentFactory.createPayment("0","0", "0","card", 100);
+        Payment payment = paymentFactory.createPayment("0", "0","card", 100);
         System.out.println(payment.toString());
         assertNotNull(payment);
 

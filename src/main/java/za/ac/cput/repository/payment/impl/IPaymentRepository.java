@@ -12,7 +12,7 @@ import za.ac.cput.repository.IRepository;
 
 import java.util.Set;
 
-public interface IPaymentRepository extends IRepository<Payment, String> {
+public interface IPaymentRepository extends IRepository<Payment, Integer> {
 
     public Set<Payment> getAll();
 }

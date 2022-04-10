@@ -12,14 +12,14 @@ import za.ac.cput.util.genericHelper;
 
 public class JobFactory {
 
-    public static Job createJob(int jobId, String jobName, String jobDescription) {
+    public static Job createJob(String jobName, String jobDescription) {
 
         if (genericHelper.isNullOrEmpty(jobName) || genericHelper.isNullOrEmpty(jobDescription))
             return null;
 
-        String jobID = genericHelper.generateId();
+        int jobId = genericHelper.generateIntId();
 
-        Job job = new Job.Builder().setJobId(jobID).
+        Job job = new Job.Builder().setJobId(jobId).
                                     setJobName(jobName).
                                     setJobDescription(jobDescription).
                                     build();

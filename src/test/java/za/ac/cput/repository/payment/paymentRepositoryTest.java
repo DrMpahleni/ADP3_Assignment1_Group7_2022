@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class paymentRepositoryTest {
 
     private static paymentRepository repository = paymentRepository.getRepository();
-    private static Payment payment = new paymentFactory().createPayment("01", "01", "01", "Cash", 200);
+    private static Payment payment = new paymentFactory().createPayment( "01", "01", "Cash", 200);
 
     @Test
     void create() {

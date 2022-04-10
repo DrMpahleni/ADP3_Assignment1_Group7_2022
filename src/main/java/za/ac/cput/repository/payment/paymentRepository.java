@@ -39,9 +39,9 @@ public class paymentRepository implements IPaymentRepository {
     }
 
     @Override
-    public Payment read (String paymentId) {
+    public Payment read (Integer paymentId) {
         Payment payment = paymentDB.stream()
-                .filter(e -> e.getPaymentId().equals(paymentId))
+                .filter(e -> e.getPaymentId() == paymentId)
                 .findAny()
                 .orElse(null);
         return payment;
@@ -59,7 +59,7 @@ public class paymentRepository implements IPaymentRepository {
     }
 
     @Override
-    public boolean delete (String paymentId) {
+    public boolean delete (Integer paymentId) {
         Payment paymentToDelete = read(paymentId);
         if(paymentToDelete == null)
             return false;

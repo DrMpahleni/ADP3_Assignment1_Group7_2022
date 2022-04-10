@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class employeeRepositoryTest {
 
     private static employeeRepository repository = employeeRepository.getRepository();
-    private static Employee employee = EmployeeFactory.createEmployee(0, "Bob", "John");
+    private static Employee employee = EmployeeFactory.createEmployee("Bob", "John");
 
     @Test
     void create() {
