@@ -1,5 +1,6 @@
 package za.ac.cput.repository.race;
 
+import za.ac.cput.entity.Order;
 import za.ac.cput.entity.Race;
 
 import java.util.HashSet;
@@ -23,22 +24,39 @@ public class RaceRepository implements IRaceRepository {
     }
     @Override
     public Race create(Race race) {
-        return null;
+        boolean success = raceDB.add(race);
+        if(!success){
+            return null;
+        }
+        return race;
     }
 
     @Override
     public Race read(String s) {
+        for (Race r : raceDB) {
+        }
         return null;
     }
 
     @Override
     public Race update(Race race) {
+        Race oldRace = read(race.getId());
+        if(oldRace != null){
+            raceDB.remove(oldRace);
+            raceDB.add(race);
+            return race;
+        }
+
         return null;
     }
 
     @Override
-    public boolean delete(String s) {
-        return false;
+    public boolean delete(String id) {
+        Race raceToDelete = read(id);
+        if(raceToDelete == null){
+            return false;
+        }
+        return true;
     }
 
     @Override

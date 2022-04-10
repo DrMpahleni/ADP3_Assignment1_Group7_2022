@@ -23,26 +23,44 @@ public class IngredientsRepository implements IIngredientsRepository {
     }
     @Override
     public Ingredients create(Ingredients ingredients) {
-        return null;
+        boolean success = ingredientsDB.add(ingredients);
+        if(!success){
+            return null;
+        }
+        return ingredients;
     }
 
     @Override
     public Ingredients read(String s) {
+        for (Ingredients i : ingredientsDB) {
+        }
         return null;
     }
 
     @Override
     public Ingredients update(Ingredients ingredients) {
+        Ingredients oldIngredients = read(ingredients.getIngredientName());
+        if(oldIngredients != null){
+            ingredientsDB.remove(oldIngredients);
+            ingredientsDB.add(ingredients);
+            return ingredients;
+        }
+
         return null;
     }
 
     @Override
-    public boolean delete(String s) {
-        return false;
+    public boolean delete(String ingredientName) {
+        Ingredients ingredientToDelete = read(ingredientName);
+        if(ingredientToDelete == null){
+            return false;
+        }
+        return true;
     }
 
     @Override
     public Set<Ingredients> getAll() {
+
         return null;
     }
 }
