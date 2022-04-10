@@ -1,6 +1,5 @@
 package za.ac.cput.repository.gender;
 
-
 import za.ac.cput.entity.Gender;
 
 import java.util.HashSet;
@@ -20,23 +19,23 @@ public class GenderRepository implements IGenderRepository {
         return repository;
     }
 
+
     @Override
     public Gender create(Gender gender) {
         boolean success = genderDB.add(gender);
         if(!success)
-        return null;
+            return null;
         return gender;
     }
 
     @Override
     public Gender read(String Id) {
-       for(Gender g : genderDB)
-           if (g.getId().equals(Id)){
-               return g;
-           }
-    return null;
+        for(Gender g : genderDB)
+            if (g.getId().equals(Id)){
+                return g;
+            }
+        return null;
     }
-
 
     @Override
     public Gender update(Gender gender) {
@@ -54,7 +53,7 @@ public class GenderRepository implements IGenderRepository {
     public boolean delete(String Id) {
         Gender genderDeleted = read(Id);
         if(genderDeleted == null)
-        return false;
+            return false;
         genderDB.remove(genderDeleted);
         return true;
     }
