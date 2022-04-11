@@ -1,5 +1,9 @@
 package za.ac.cput.factory;
-
+/* GenderFactory.java
+ This is a Gender Factory Class
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 import za.ac.cput.entity.Gender;
 import za.ac.cput.util.genericHelper;
 
