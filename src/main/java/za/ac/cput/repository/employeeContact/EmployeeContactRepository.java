@@ -1,5 +1,9 @@
 package za.ac.cput.repository.employeeContact;
-
+/* EmployeeContactRepository.java
+        This is a Employee Contact Repository
+        Author: Vuyisa Nkangana(218192215)
+        Due Date: 10 April 2022
+        */
 import za.ac.cput.entity.EmployeeContact;
 
 import java.util.HashSet;

@@ -1,4 +1,9 @@
 package za.ac.cput.repository.contactType;
+/* ContactTypeRepository.java
+ This is a Contact Type Repository
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 
 import za.ac.cput.entity.ContactType;
 
