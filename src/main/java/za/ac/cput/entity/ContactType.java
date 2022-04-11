@@ -45,14 +45,14 @@ public class ContactType {
             this.name = name;
             return this;
         }
-      public ContactType build(){
+        public ContactType build(){
             return new ContactType(this);
-      }
-      public Builder copy(ContactType contactType){
+        }
+        public Builder copy(ContactType contactType){
             this.Id = contactType.Id;
             this.name = contactType.name;
             return this;
-      }
+        }
     }
-}
 
+}

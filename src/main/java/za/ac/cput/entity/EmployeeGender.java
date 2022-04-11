@@ -6,16 +6,16 @@ package za.ac.cput.entity;
  Due Date: 10 April 2022
   */
 public class EmployeeGender {
-private String employeeId;
-private String genderId;
+    private String employeeId;
+    private String genderId;
 
-public EmployeeGender(){
+    public EmployeeGender(){
 
-}
-public EmployeeGender (Builder builder){
-    this.employeeId = builder.employeeId;
-    this.genderId = builder.genderId;
-}
+    }
+    public EmployeeGender (Builder builder){
+        this.employeeId = builder.employeeId;
+        this.genderId = builder.genderId;
+    }
 
     public String getEmployeeId() {
         return employeeId;
@@ -33,7 +33,7 @@ public EmployeeGender (Builder builder){
                 '}';
     }
     public static class Builder{
-    private String employeeId, genderId;
+        private String employeeId, genderId;
 
         public Builder setEmployeeId(String employeeId) {
             this.employeeId = employeeId;
@@ -53,5 +53,4 @@ public EmployeeGender (Builder builder){
             return this;
         }
     }
-
 }

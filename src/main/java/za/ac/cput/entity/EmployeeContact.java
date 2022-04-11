@@ -1,11 +1,5 @@
 package za.ac.cput.entity;
 
-/* EmployeeContact.java
- This is a Employee Contact Entity
- Author: Vuyisa Nkangana(218192215)
- Due Date: 10 April 2022
-  */
-
 import java.lang.module.ModuleDescriptor;
 
 public class EmployeeContact {
@@ -53,7 +47,7 @@ public class EmployeeContact {
             return this;
         }
 
-        public Builder setContactTypeId(String contactTypeId) {
+        public Builder setContactTypeId(int contactTypeId) {
             this.contactTypeId = contactTypeId;
             return this;
         }

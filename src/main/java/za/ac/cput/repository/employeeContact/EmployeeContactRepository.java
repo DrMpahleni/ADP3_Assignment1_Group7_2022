@@ -23,11 +23,12 @@ public class EmployeeContactRepository implements IEmployeeContactRepository {
         return repository;
     }
 
+
     @Override
     public EmployeeContact create(EmployeeContact employeeContact) {
         boolean  success = employeeContactDB.add(employeeContact);
         if(!success)
-        return null;
+            return null;
         return employeeContact;
     }
 
@@ -51,11 +52,12 @@ public class EmployeeContactRepository implements IEmployeeContactRepository {
         return null;
     }
 
+
     @Override
     public boolean delete(String employeeId) {
         EmployeeContact employeeContactDeleted = read(employeeId);
         if(employeeContactDeleted == null)
-        return false;
+            return false;
         employeeContactDB.remove(employeeContactDeleted);
         return true;
     }

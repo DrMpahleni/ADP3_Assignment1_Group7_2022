@@ -9,6 +9,6 @@ import za.ac.cput.repository.IRepository;
 
 import java.util.Set;
 
-public interface IContactTypeRepository extends IRepository<ContactType, String> {
+public interface IContactTypeRepository extends IRepository<ContactType, String>  {
     public Set<ContactType> getAll();
 }

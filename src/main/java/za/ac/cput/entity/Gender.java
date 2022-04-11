@@ -12,10 +12,10 @@ public class Gender {
     private Gender(){
 
     }
- private Gender (Builder builder){
+    private Gender (Builder builder){
         this.Id = builder.Id;
         this.name = builder.name;
- }
+    }
 
     public String getId() {
         return Id;
