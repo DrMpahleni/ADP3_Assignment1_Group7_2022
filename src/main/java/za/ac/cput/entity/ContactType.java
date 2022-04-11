@@ -1,5 +1,9 @@
 package za.ac.cput.entity;
-
+ /* ContactType.java
+ This is a Contact Type Entity
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 public class ContactType {
     private String Id;
     private String name;
@@ -41,14 +45,14 @@ public class ContactType {
             this.name = name;
             return this;
         }
-      public ContactType build(){
+        public ContactType build(){
             return new ContactType(this);
-      }
-      public Builder copy(ContactType contactType){
+        }
+        public Builder copy(ContactType contactType){
             this.Id = contactType.Id;
             this.name = contactType.name;
             return this;
-      }
+        }
     }
-}
 
+}

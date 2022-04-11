@@ -1,16 +1,21 @@
 package za.ac.cput.entity;
 
+/* EmployeeGender.java
+ This is a Employee Gender Entity
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 public class EmployeeGender {
-private String employeeId;
-private String genderId;
+    private String employeeId;
+    private String genderId;
 
-public EmployeeGender(){
+    public EmployeeGender(){
 
-}
-public EmployeeGender (Builder builder){
-    this.employeeId = builder.employeeId;
-    this.genderId = builder.genderId;
-}
+    }
+    public EmployeeGender (Builder builder){
+        this.employeeId = builder.employeeId;
+        this.genderId = builder.genderId;
+    }
 
     public String getEmployeeId() {
         return employeeId;
@@ -28,7 +33,7 @@ public EmployeeGender (Builder builder){
                 '}';
     }
     public static class Builder{
-    private String employeeId, genderId;
+        private String employeeId, genderId;
 
         public Builder setEmployeeId(String employeeId) {
             this.employeeId = employeeId;
@@ -42,11 +47,10 @@ public EmployeeGender (Builder builder){
         public EmployeeGender build(){
             return new EmployeeGender(this);
         }
-        private Builder copy(EmployeeGender employeeGender){
+        public Builder copy(EmployeeGender employeeGender){
             this.employeeId = employeeGender.employeeId;
             this.genderId = employeeGender.genderId;
             return this;
         }
     }
-
 }
