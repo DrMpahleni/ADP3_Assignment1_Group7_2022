@@ -1,5 +1,11 @@
 package za.ac.cput.entity;
 
+/* EmployeeContactTest.java
+ This is a Employee Contact Entity Test
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;

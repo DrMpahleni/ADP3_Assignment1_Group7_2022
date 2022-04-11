@@ -1,5 +1,10 @@
 package za.ac.cput.entity;
 
+/* GenderTest.java
+ This is a Gender Entity Test
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;

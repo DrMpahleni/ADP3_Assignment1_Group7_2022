@@ -1,5 +1,9 @@
 package za.ac.cput.entity;
-
+/* ContactTypeTest.java
+ This is a Contact Type Entity Test
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
