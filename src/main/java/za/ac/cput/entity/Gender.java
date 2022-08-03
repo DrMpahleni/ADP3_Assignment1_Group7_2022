@@ -1,4 +1,9 @@
 package za.ac.cput.entity;
+/* Gender.java
+ This is a Gender Entity
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 
 public class Gender {
     private String Id;
@@ -7,10 +12,10 @@ public class Gender {
     private Gender(){
 
     }
- private Gender (Builder builder){
+    private Gender (Builder builder){
         this.Id = builder.Id;
         this.name = builder.name;
- }
+    }
 
     public String getId() {
         return Id;

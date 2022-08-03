@@ -1,5 +1,9 @@
 package za.ac.cput.repository.employeeContact;
-
+/* EmployeeContactRepository.java
+        This is a Employee Contact Repository
+        Author: Vuyisa Nkangana(218192215)
+        Due Date: 10 April 2022
+        */
 import za.ac.cput.entity.EmployeeContact;
 
 import java.util.HashSet;
@@ -19,11 +23,12 @@ public class EmployeeContactRepository implements IEmployeeContactRepository {
         return repository;
     }
 
+
     @Override
     public EmployeeContact create(EmployeeContact employeeContact) {
         boolean  success = employeeContactDB.add(employeeContact);
         if(!success)
-        return null;
+            return null;
         return employeeContact;
     }
 
@@ -47,11 +52,12 @@ public class EmployeeContactRepository implements IEmployeeContactRepository {
         return null;
     }
 
+
     @Override
     public boolean delete(String employeeId) {
         EmployeeContact employeeContactDeleted = read(employeeId);
         if(employeeContactDeleted == null)
-        return false;
+            return false;
         employeeContactDB.remove(employeeContactDeleted);
         return true;
     }
