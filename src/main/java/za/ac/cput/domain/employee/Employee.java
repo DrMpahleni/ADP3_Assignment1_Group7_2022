@@ -30,14 +30,17 @@ public class Employee implements Serializable {
     }
 
     public int getEmployeeId() {
+
         return employeeId;
     }
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
