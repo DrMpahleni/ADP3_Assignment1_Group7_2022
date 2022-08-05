@@ -1,5 +1,9 @@
 package za.ac.cput.factory.contact;
-
+/* EmployeeContact.java
+ This is an Employee Contact Factory Class
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 
 import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.util.genericHelper;
@@ -16,3 +20,4 @@ public class EmployeeContactFactory {
 
 }
 }
+

@@ -6,8 +6,9 @@ package za.ac.cput.repository.contactType;
  Due Date: 10 April 2022
   */
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.ContactType;
-import za.ac.cput.factory.ContactTypeFactory;
+import za.ac.cput.domain.contact.ContactType;
+import za.ac.cput.factory.contact.ContactTypeFactory;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
