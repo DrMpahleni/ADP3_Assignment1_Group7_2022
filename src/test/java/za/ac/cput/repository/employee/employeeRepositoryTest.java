@@ -8,8 +8,8 @@
 package za.ac.cput.repository.employee;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Employee;
-import za.ac.cput.factory.EmployeeFactory;
+import za.ac.cput.domain.employee.Employee;
+import za.ac.cput.factory.employee.EmployeeFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
