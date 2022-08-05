@@ -19,6 +19,7 @@ public class employeeRepository implements IEmployeeRepository{
     private Set<Employee> employeeDB = null;
 
     private employeeRepository() {
+
         employeeDB = new HashSet<Employee>();
     }
 
@@ -70,6 +71,7 @@ public class employeeRepository implements IEmployeeRepository{
     }
 
     public Set<Employee> getAll(){
+
         return employeeDB;
     }
 
