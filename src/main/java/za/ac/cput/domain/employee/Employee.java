@@ -5,7 +5,7 @@
     Student Number: 216250773
  */
 
-package za.ac.cput.domain.employee;
+package za.ac.cput.entity;
 
 
 public class Employee {
@@ -25,14 +25,17 @@ public class Employee {
     }
 
     public int getEmployeeId() {
+
         return employeeId;
     }
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
