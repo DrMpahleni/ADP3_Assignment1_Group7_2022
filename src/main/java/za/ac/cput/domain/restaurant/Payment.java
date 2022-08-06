@@ -7,8 +7,15 @@
 
 package za.ac.cput.domain.restaurant;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Payment")
 public class Payment {
-    private int paymentId;
+    @Id
+    private String paymentId;
     private String customerId;
     private String orderID;
     private int amount;
@@ -25,7 +32,7 @@ public class Payment {
         this.amount = builder.amount;
     }
 
-    public int getPaymentId() {
+    public String getPaymentId() {
         return paymentId;
     }
 
@@ -57,10 +64,10 @@ public class Payment {
     }
 
     public static class Builder {
-        private String customerId, orderId, paymentType;
-        private int paymentId, amount;
+        private String paymentId, customerId, orderId, paymentType;
+        private int amount;
 
-        public Builder setPaymentId(int paymentId) {
+        public Builder setPaymentId(String paymentId) {
             this.paymentId = paymentId;
 
             return this;

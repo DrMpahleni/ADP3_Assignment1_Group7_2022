@@ -17,7 +17,7 @@ public class JobFactory {
         if (genericHelper.isNullOrEmpty(jobName) || genericHelper.isNullOrEmpty(jobDescription))
             return null;
 
-        int jobId = genericHelper.generateIntId();
+        String jobId = genericHelper.generateId();
 
         Job job = new Job.Builder().setJobId(jobId).
                                     setJobName(jobName).

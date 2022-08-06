@@ -14,7 +14,7 @@ import za.ac.cput.domain.restaurant.Payment;
 import java.util.Set;
 
 @Repository
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+public interface PaymentRepository extends JpaRepository<Payment, String> {
 
     public Set<Payment> getAll();
 }

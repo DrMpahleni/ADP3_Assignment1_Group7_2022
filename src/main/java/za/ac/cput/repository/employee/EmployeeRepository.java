@@ -14,7 +14,7 @@ import za.ac.cput.domain.employee.Employee;
 import java.util.Set;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+public interface EmployeeRepository extends JpaRepository<Employee, String> {
 
     public Set<Employee> getAll();
 }

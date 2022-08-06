@@ -7,8 +7,16 @@
 
 package za.ac.cput.domain.restaurant;
 
-public class Restaurant {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
+@Entity
+@Table(name = "Restaurant")
+public class Restaurant implements Serializable {
+
+    @Id
     private String name;
     private String address;
     private int phone;
