@@ -5,12 +5,19 @@
     Student Number: 216250773
  */
 
-package za.ac.cput.entity;
+package za.ac.cput.domain.employee;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-public class Employee {
+@Entity
+@Table(name = "Employee")
+public class Employee implements Serializable {
 
-    private int employeeId;
+    @Id
+    private String employeeId;
     private String firstName;
     private String lastName;
 
@@ -24,7 +31,7 @@ public class Employee {
         this.lastName = builder.lastName;
     }
 
-    public int getEmployeeId() {
+    public String getEmployeeId() {
 
         return employeeId;
     }
@@ -50,8 +57,7 @@ public class Employee {
 
     public static class Builder {
 
-        private String firstName, lastName;
-        private int employeeId;
+        private String employeeId, firstName, lastName;
 
         public Builder setFirstName(String firstName) {
             this.firstName = firstName;
@@ -65,7 +71,7 @@ public class Employee {
             return this;
         }
 
-        public Builder setEmployeeId(int employeeId) {
+        public Builder setEmployeeId(String employeeId) {
             this.employeeId = employeeId;
 
             return this;

@@ -7,9 +7,17 @@
 
 package za.ac.cput.domain.employee;
 
-public class Job {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-    private int jobId;
+@Entity
+@Table(name = "Job")
+public class Job implements Serializable {
+
+    @Id
+    private String jobId;
     private String jobName;
     private String jobDescription;
 
@@ -22,7 +30,7 @@ public class Job {
         this.jobDescription = builder.jobDescription;
     }
 
-    public int getJobId() {
+    public String getJobId() {
         return jobId;
     }
 
@@ -45,8 +53,7 @@ public class Job {
 
     public static class Builder {
 
-        private String jobName, jobDescription;
-        private int jobId;
+        private String jobId, jobName, jobDescription;
 
         public Builder setJobName(String jobName) {
             this.jobName = jobName;
@@ -60,7 +67,7 @@ public class Job {
             return this;
         }
 
-        public Builder setJobId(int jobId) {
+        public Builder setJobId(String jobId) {
             this.jobId = jobId;
 
             return this;

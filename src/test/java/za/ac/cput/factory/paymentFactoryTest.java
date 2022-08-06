@@ -10,7 +10,8 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Payment;
+import za.ac.cput.domain.restaurant.Payment;
+import za.ac.cput.factory.restaurant.paymentFactory;
 
 import java.time.Duration;
 

@@ -17,7 +17,7 @@ public class paymentFactory {
         if (genericHelper.isNullOrEmpty(orderId) || genericHelper.isNullOrEmpty(customerId))
             return null;
 
-        int paymentId = genericHelper.generateIntId();
+        String paymentId = genericHelper.generateId();
 
         Payment payment = new Payment.Builder().setPaymentId(paymentId).
                                                 setCustomerId(customerId).
