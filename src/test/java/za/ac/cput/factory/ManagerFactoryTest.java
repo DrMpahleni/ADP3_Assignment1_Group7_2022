@@ -3,8 +3,10 @@ package za.ac.cput.factory;
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
-import za.ac.cput.entity.Manager;
+import za.ac.cput.domain.role.Manager;
 import org.junit.jupiter.api.Test;
+import za.ac.cput.factory.role.ManagerFactory;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 

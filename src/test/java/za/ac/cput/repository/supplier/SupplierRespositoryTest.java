@@ -3,7 +3,7 @@ package za.ac.cput.repository.supplier;
 /*
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
-*/
+
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.factory.SupplierFactory;
@@ -59,3 +59,4 @@ class SupplierRespositoryTest {
    }
 
 }
+ */

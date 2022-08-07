@@ -10,10 +10,11 @@ package za.ac.cput.domain.restaurant;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "Payment")
-public class Payment {
+public class Payment implements Serializable {
     @Id
     private String paymentId;
     private String customerId;

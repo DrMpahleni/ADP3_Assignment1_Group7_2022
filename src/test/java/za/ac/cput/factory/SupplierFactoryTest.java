@@ -5,7 +5,8 @@ Date: 02 April 2022
 */
 import org.junit.jupiter.api.Test;
 
-import za.ac.cput.entity.Supplier;
+import za.ac.cput.domain.supplier.Supplier;
+import za.ac.cput.factory.supplier.SupplierFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

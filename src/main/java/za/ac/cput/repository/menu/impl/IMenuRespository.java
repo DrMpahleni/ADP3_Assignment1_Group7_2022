@@ -4,10 +4,12 @@ package za.ac.cput.repository.menu.impl;
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
-import za.ac.cput.entity.Menu;
-import za.ac.cput.repository.IRepository;
+import org.springframework.stereotype.Repository;
+import za.ac.cput.domain.menu.Menu;
+import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Set;
 
-public interface IMenuRespository extends IRepository<Menu, Integer> {
+@Repository
+public interface IMenuRespository extends JpaRepository<Menu, Integer> {
 public Set<Menu> getAll();
 }

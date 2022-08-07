@@ -5,15 +5,29 @@ Entity for the MenuItem
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
-public class MenuItem {
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "MenuItem")
+public class MenuItem implements Serializable {
+
+    @Id
     private int menuItemID;
+
     private Double price;
+
     private String portion ;
 
+    protected MenuItem (){
 
+    }
 
-    public MenuItem(Builder builder) {
+    private MenuItem(Builder builder) {
 
         this.menuItemID = builder.menuItemID;
         this.price = builder.price;
@@ -21,9 +35,7 @@ public class MenuItem {
 
     }
 
-    public MenuItem (){
 
-    }
 
     public Integer getMenuItemID() {
         return menuItemID;

@@ -1,11 +1,11 @@
-package za.ac.cput.repository.employee;
+package za.ac.cput.repository.role;
 
 /*
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
-*/
+
 import za.ac.cput.entity.Manager;
-import za.ac.cput.repository.employee.impl.IManagerRespository;
+import za.ac.cput.repository.role.impl.IManagerRespository;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -75,3 +75,4 @@ public class ManagerRespository implements IManagerRespository {
     }
 
 }
+*/

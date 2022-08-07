@@ -5,21 +5,29 @@ Entity for the Menu
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
-public class Menu {
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Menu")
+public class Menu implements Serializable {
+
+    @Id
     private int menuID;
+
     private String name;
 
-
-
-    public Menu(Builder builder) {
-
-        this.menuID = builder.menuID;
-        this.name = builder.name;
+    protected Menu() {
 
     }
 
-    public Menu() {
+    private Menu(Builder builder) {
+
+        this.menuID = builder.menuID;
+        this.name = builder.name;
 
     }
 

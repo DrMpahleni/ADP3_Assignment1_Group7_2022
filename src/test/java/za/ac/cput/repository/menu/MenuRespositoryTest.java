@@ -2,10 +2,10 @@ package za.ac.cput.repository.menu;
 /*
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
-*/
+
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Menu;
-import za.ac.cput.factory.MenuFactory;
+import za.ac.cput.domain.menu.Menu;
+import za.ac.cput.factory.menu.MenuFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MenuRespositoryTest {
@@ -56,3 +56,4 @@ class MenuRespositoryTest {
     }
 
 }
+*/

@@ -7,17 +7,29 @@ Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
 
-public class Manager {
+import javax.persistence.*;
+import java.io.Serializable;
 
+@Entity
+@Table(name = "Manager")
+public class Manager implements Serializable {
+
+    @Id
     private int managerID;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     private int positionID;
+
     private String fisrtName;
     private String lastName;
     private String phoneNo;
     private String emailAddress;
 
+    protected Manager() {
 
-    public Manager(Builder builder) {
+    }
+
+    private Manager(Builder builder) {
 
         this.managerID = builder.managerID;
         this.positionID = builder.positionID;
@@ -26,10 +38,6 @@ public class Manager {
         this.phoneNo = builder.phoneNo;
         this.emailAddress = builder.emailAddress;
     }
-
-    public Manager() {
-
-        }
 
     public Integer getPositionID() {
         return positionID;
