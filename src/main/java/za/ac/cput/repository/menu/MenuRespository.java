@@ -3,7 +3,7 @@ package za.ac.cput.repository.menu;
 /*
 Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
-*/
+
 import za.ac.cput.entity.Menu;
 import za.ac.cput.repository.menu.impl.IMenuRespository;
 
@@ -74,3 +74,4 @@ public class MenuRespository implements IMenuRespository {
         return menuSet;
     }
 }
+*/

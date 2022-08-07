@@ -6,17 +6,32 @@ Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
 
-public class Supplier {
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Supplier")
+public class Supplier implements Serializable {
+
+    @Id
     private int supplierID;
+
     private String supplierName;
+
     private String supplierEmail;
+
     private String supplierPhone;
+
     private String supplierAddress;
 
+    protected Supplier() {
 
+    }
 
-    public Supplier(Builder builder) {
+    private Supplier(Builder builder) {
 
         this.supplierID = builder.supplierID;
         this.supplierName = builder.supplierName;
@@ -25,9 +40,6 @@ public class Supplier {
         this.supplierAddress = builder.supplierAddress;
     }
 
-    public Supplier() {
-
-    }
 
     public Integer getSupplierID() {
         return supplierID;
