@@ -7,8 +7,8 @@ package za.ac.cput.repository.gender;
   */
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Gender;
-import za.ac.cput.factory.GenderFactory;
+import za.ac.cput.domain.gender.Gender;
+import za.ac.cput.factory.gender.GenderFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

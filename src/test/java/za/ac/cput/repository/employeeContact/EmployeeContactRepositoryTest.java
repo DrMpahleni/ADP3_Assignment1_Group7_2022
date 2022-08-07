@@ -6,14 +6,14 @@ package za.ac.cput.repository.employeeContact;
   */
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.EmployeeContact;
-import za.ac.cput.factory.EmployeeContactFactory;
+import za.ac.cput.domain.contact.EmployeeContact;
+import za.ac.cput.factory.contact.EmployeeContactFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeContactRepositoryTest {
     private static EmployeeContactRepository repository = EmployeeContactRepository.getRepository();
-    private static EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact("Ntando8810", "Female001", "ntand@gmail.com");
+    private static EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact(2181922, 66087, "ntand@gmail.com");
 
     @Test
     void create() {

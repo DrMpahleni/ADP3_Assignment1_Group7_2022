@@ -1,7 +1,9 @@
 package za.ac.cput.repository.gender;
 
 
-import za.ac.cput.entity.Gender;
+
+
+import za.ac.cput.domain.gender.Gender;
 
 import java.util.HashSet;
 import java.util.Set;
