@@ -1,14 +1,15 @@
 package za.ac.cput.factory;
 
 /* EmployeeGenderFactoryTest.java
- This is a Employee Gender Factory Test Class
+ This is an Employee Gender Factory Test Class
  Author: Vuyisa Nkangana(218192215)
  Due Date: 10 April 2022
   */
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.EmployeeGender;
+import za.ac.cput.domain.gender.EmployeeGender;
+import za.ac.cput.factory.gender.EmployeeGenderFactory;
 
 import java.time.Duration;
 

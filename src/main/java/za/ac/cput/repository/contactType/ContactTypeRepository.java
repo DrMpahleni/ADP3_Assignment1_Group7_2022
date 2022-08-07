@@ -5,7 +5,8 @@ package za.ac.cput.repository.contactType;
  Due Date: 10 April 2022
   */
 
-import za.ac.cput.entity.ContactType;
+import za.ac.cput.domain.contact.ContactType;
+
 
 import java.util.HashSet;
 import java.util.Set;

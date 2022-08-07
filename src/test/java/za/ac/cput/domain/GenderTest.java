@@ -6,10 +6,12 @@ package za.ac.cput.domain;
  Due Date: 10 April 2022
   */
 
-import org.junit.Test;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.*;
 

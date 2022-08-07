@@ -1,5 +1,10 @@
 package za.ac.cput.domain.contact;
 
+/* EmployeeContact.java
+ This is an Employee Contact Class
+ Author: Vuyisa Nkangana(218192215)
+ Due Date: 10 April 2022
+  */
 public class EmployeeContact {
     private String  employeeId;
     private int contactTypeId;

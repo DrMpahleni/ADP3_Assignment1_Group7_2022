@@ -4,12 +4,13 @@ package za.ac.cput.domain;
  Author: Vuyisa Nkangana(218192215)
  Due Date: 10 April 2022
   */
-import org.junit.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 
 import java.time.Duration;

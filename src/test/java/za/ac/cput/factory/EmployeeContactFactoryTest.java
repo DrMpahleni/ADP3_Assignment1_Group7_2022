@@ -1,13 +1,15 @@
 package za.ac.cput.factory;
 /* EmployeeContactFactoryTest.java
- This is a Employee Contact Factory Test Class
+ This is an Employee Contact Factory Test Class
  Author: Vuyisa Nkangana(218192215)
  Due Date: 10 April 2022
   */
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.EmployeeContact;
+import za.ac.cput.domain.contact.EmployeeContact;
+import za.ac.cput.factory.contact.EmployeeContactFactory;
+
 
 import java.time.Duration;
 
@@ -27,7 +29,7 @@ class EmployeeContactFactoryTest {
     @Test
     public void test() {
 
-        EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact("Nka2001", "empNumb08", "SinoNka");
+        EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact(2181933, Integer.parseInt("empNumb08"), "SinoNka");
         System.out.println(employeeContact.toString());
         assertNotNull(employeeContact);
     }

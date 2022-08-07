@@ -4,7 +4,8 @@ package za.ac.cput.repository.employeeGender;
         Author: Vuyisa Nkangana(218192215)
         Due Date: 10 April 2022
         */
-import za.ac.cput.entity.EmployeeGender;
+
+import za.ac.cput.domain.gender.EmployeeGender;
 import za.ac.cput.repository.IRepository;
 
 import java.util.Set;

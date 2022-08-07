@@ -8,8 +8,8 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.ContactType;
-
+import za.ac.cput.domain.contact.ContactType;
+import za.ac.cput.factory.contact.ContactTypeFactory;
 
 
 import java.time.Duration;

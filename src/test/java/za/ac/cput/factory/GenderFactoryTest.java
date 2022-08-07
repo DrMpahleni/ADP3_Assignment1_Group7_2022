@@ -8,10 +8,9 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Gender;
-
+import za.ac.cput.domain.gender.Gender;
+import za.ac.cput.factory.gender.GenderFactory;
 import java.time.Duration;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class GenderFactoryTest {
