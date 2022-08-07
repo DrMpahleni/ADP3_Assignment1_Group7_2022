@@ -21,12 +21,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     }
 
-    public Employee save (Employee employee) {
+    public Employee create (Employee employee) {
         return repository.save(employee);
     }
 
     public Optional<Employee> read (String employeeId) {
         return repository.findById(employeeId);
+    }
+
+    public Employee update(Employee employee) {
+        return repository.save(employee);
     }
 
     public void delete (Employee employee) {

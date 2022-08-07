@@ -4,7 +4,8 @@ import java.util.Optional;
 
 public interface IService <T, ID>{
 
-    T save (T t);
+    T create (T t);
     Optional<T> read (ID id);
+    T update (T t);
     void delete (T t);
 }
