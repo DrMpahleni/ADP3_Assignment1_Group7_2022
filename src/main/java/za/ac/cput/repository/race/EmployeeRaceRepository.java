@@ -1,4 +1,4 @@
-package za.ac.cput.repository.employeeRace;
+package za.ac.cput.repository.race;
 
 /* EmployeeRaceRepository.java
    This is a EmployeeRace Repository class
@@ -7,7 +7,7 @@ package za.ac.cput.repository.employeeRace;
  */
 
 import za.ac.cput.domain.race.EmployeeRace;
-import za.ac.cput.repository.employeeRace.impl.IEmployeeRaceRepository;
+import za.ac.cput.repository.race.impl.IEmployeeRaceRepository;
 
 import java.util.HashSet;
 import java.util.Set;

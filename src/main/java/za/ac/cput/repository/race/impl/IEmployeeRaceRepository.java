@@ -1,4 +1,4 @@
-package za.ac.cput.repository.employeeRace.impl;
+package za.ac.cput.repository.race.impl;
 
 /* IEmployeeRaceRepository.java
    This is a IEmployeeRace Repository class
