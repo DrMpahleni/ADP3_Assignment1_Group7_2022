@@ -2,19 +2,20 @@ package za.ac.cput.repository.race;
 
 /* RaceRepositoryTest.java
    This is ERaceRepository Test case class
-   @Author: Lihle Njobe(21819388)
+   @Author: Lihle Njobe(218193882)
    Due date: 07 August 2022
  */
 
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.domain.race.Race;
 import za.ac.cput.factory.race.RaceFactory;
 
-
 import static org.junit.jupiter.api.Assertions.*;
+@TestMethodOrder(MethodOrderer.MethodName.class)
 
 class RaceRepositoryTest {
-
     private static RaceRepository repository = RaceRepository.getRepository();
     private static Race race = RaceFactory.createRace("Coloured ");
 
@@ -51,5 +52,5 @@ class RaceRepositoryTest {
         System.out.println(repository.getAll());
     }
 
-}
 
+}

@@ -1,15 +1,16 @@
-package za.ac.cput.repository.lookup;
+package za.ac.cput.repository.ingredients;
+
 /* IngredientsRepositoryTest.java
    This is Ingredients Repository Test case class
-   @Author: Lihle Njobe(21819388)
+   @Author: Lihle Njobe(218193882)
    Due date: 07 August 2022
  */
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.domain.lookup.Ingredients;
-import za.ac.cput.factory.lookup.IngredientsFactory;
+import za.ac.cput.domain.supplier.Ingredients;
+import za.ac.cput.factory.supplier.IngredientsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
@@ -51,6 +52,7 @@ class IngredientsRepositoryTest {
         System.out.println("Get all ingredients");
         System.out.println(repository.getAll());
     }
+
 
 
 }

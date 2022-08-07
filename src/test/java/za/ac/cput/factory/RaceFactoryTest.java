@@ -13,6 +13,7 @@ import za.ac.cput.factory.race.RaceFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RaceFactoryTest {
+
     @Test
     void createRace() {
         Race race = RaceFactory.createRace("White ") ;

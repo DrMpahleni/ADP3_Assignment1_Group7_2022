@@ -1,15 +1,16 @@
-package za.ac.cput.repository.lookup;
+package za.ac.cput.repository.order;
+
 /* OrderRepositoryTest.java
    This is Order Repository Test case class
-   @Author: Lihle Njobe(21819388)
+   @Author: Lihle Njobe(218193882)
    Due date: 07 August 2022
  */
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.domain.lookup.Order;
-import za.ac.cput.factory.lookup.OrderFactory;
+import za.ac.cput.domain.restaurant.Order;
+import za.ac.cput.factory.restaurant.OrderFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
@@ -42,15 +43,15 @@ class OrderRepositoryTest {
     }
     @Test
     void d_delete() {
-            boolean success = repository.delete(order.getOrderId());
-            assertTrue(success);
-            System.out.println("Order deleted " + success);
-        }
-        @Test
-        void e_getAll() {
-            System.out.println("Get all orders");
-            System.out.println(repository.getAll());
+        boolean success = repository.delete(order.getOrderId());
+        assertTrue(success);
+        System.out.println("Order deleted " + success);
+    }
+    @Test
+    void e_getAll() {
+        System.out.println("Get all orders");
+        System.out.println(repository.getAll());
     }
 
 
-    }
+}

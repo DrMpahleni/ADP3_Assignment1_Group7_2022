@@ -7,13 +7,12 @@ package za.ac.cput.factory;
  */
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.lookup.Order;
-import za.ac.cput.factory.lookup.OrderFactory;
+import za.ac.cput.domain.restaurant.Order;
+import za.ac.cput.factory.restaurant.OrderFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderFactoryTest {
-
     @Test
     void createOrder() {
         Order order = OrderFactory.createOrder(" Burger ", " 16/08/2022", 60);

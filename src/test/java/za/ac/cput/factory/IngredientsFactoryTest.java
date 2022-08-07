@@ -7,8 +7,8 @@ package za.ac.cput.factory;
  */
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.lookup.Ingredients;
-import za.ac.cput.factory.lookup.IngredientsFactory;
+import za.ac.cput.domain.supplier.Ingredients;
+import za.ac.cput.factory.supplier.IngredientsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

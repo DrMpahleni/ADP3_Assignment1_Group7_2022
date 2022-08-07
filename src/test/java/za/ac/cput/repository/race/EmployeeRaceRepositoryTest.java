@@ -1,7 +1,8 @@
 package za.ac.cput.repository.race;
+
 /* EmployeeRaceRepositoryTest.java
    This is EmployeeRaceRepository Test case class
-   @Author: Lihle Njobe(21819388)
+   @Author: Lihle Njobe(218193882)
    Due date: 07 August 2022
  */
 
@@ -12,10 +13,10 @@ import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.factory.race.EmployeeRaceFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 @TestMethodOrder(MethodOrderer.MethodName.class)
 
 class EmployeeRaceRepositoryTest {
-
     private static EmployeeRaceRepository repository = EmployeeRaceRepository.getRepository();
     private static EmployeeRace employeeRace = EmployeeRaceFactory.createEmployeeRace("Coloured ");
 
@@ -51,5 +52,6 @@ class EmployeeRaceRepositoryTest {
         System.out.println("Get all employee races");
         System.out.println(repository.getAll());
     }
+
 
 }
