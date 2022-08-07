@@ -2,7 +2,7 @@ package za.ac.cput.domain.race;
 
 /* EmployeeRace.java
    This is Employee Race domain class
-   @Author: Lihle Njobe(21819388)
+   @Author: Lihle Njobe(218193882)
    Due date: 07 August 2022
  */
 
