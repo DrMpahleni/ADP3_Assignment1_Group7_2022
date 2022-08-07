@@ -23,8 +23,8 @@ class EmployeeServiceImplTest {
     @Autowired private EmployeeService service;
 
     @Test
-    void save() {
-        Employee saved = service.save(employee);
+    void create() {
+        Employee saved = service.create(employee);
         String output = String.valueOf(saved);
         assertAll(
                 () -> assertNotNull(saved),
@@ -35,7 +35,7 @@ class EmployeeServiceImplTest {
 
     @Test
     void read() {
-        Employee saved = service.save(employee);
+        Employee saved = service.create(employee);
         Optional<Employee> read = service.read(saved.getEmployeeId());
         System.out.println(read);
         String output = String.valueOf(read.get());
@@ -46,13 +46,21 @@ class EmployeeServiceImplTest {
     }
 
     @Test
+    void update () {
+        Employee saved = service.create(employee);
+        Employee updated = new Employee.Builder().copy(employee).setEmployeeId("002").build();
+        assertNotNull(updated);
+        System.out.println(updated);
+    }
+
+    @Test
     void delete() {
         this.service.delete(employee);
     }
 
     @Test
     void findByStaffId() {
-        Employee saved = service.save(employee);
+        Employee saved = service.create(employee);
         String employeeId = saved.getEmployeeId();
         List<Employee> employeeNameList = service.getAll(employeeId);
         System.out.println(employeeNameList);

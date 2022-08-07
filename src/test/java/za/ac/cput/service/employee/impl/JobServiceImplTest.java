@@ -24,8 +24,8 @@ class JobServiceImplTest {
     private JobService service;
 
     @Test
-    void save() {
-        Job saved = service.save(job);
+    void create() {
+        Job saved = service.create(job);
         String output = String.valueOf(saved);
         assertAll(
                 () -> assertNotNull(saved),
@@ -36,7 +36,7 @@ class JobServiceImplTest {
 
     @Test
     void read() {
-        Job saved = service.save(job);
+        Job saved = service.create(job);
         Optional<Job> read = service.read(saved.getJobId());
         System.out.println(read);
         String output = String.valueOf(read.get());
@@ -47,13 +47,21 @@ class JobServiceImplTest {
     }
 
     @Test
+    void update() {
+        Job saved = service.create(job);
+        Job updated = new Job.Builder().copy(job).setJobId("0005").build();
+        assertNotNull(updated);
+        System.out.println(updated);
+    }
+
+    @Test
     void delete() {
         this.service.delete(job);
     }
 
     @Test
     void findByJobId() {
-        Job saved = service.save(job);
+        Job saved = service.create(job);
         String jobId = saved.getJobId();
         List<Job> jobNameList = service.getAll(jobId);
         System.out.println(jobNameList);

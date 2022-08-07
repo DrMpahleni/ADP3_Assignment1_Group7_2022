@@ -19,12 +19,16 @@ public class JobServiceImpl implements JobService {
 
     public JobServiceImpl() {}
 
-    public Job save (Job job) {
+    public Job create (Job job) {
         return repository.save(job);
     }
 
     public Optional<Job> read (String jobId){
         return repository.findById(jobId);
+    }
+
+    public Job update (Job job) {
+        return repository.save(job);
     }
 
     public void delete (Job job) {
