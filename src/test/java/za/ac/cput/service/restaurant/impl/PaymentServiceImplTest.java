@@ -26,7 +26,7 @@ class PaymentServiceImplTest {
 
     @Test
     void save() {
-        Payment saved = service.save(payment);
+        Payment saved = service.create(payment);
         String output = String.valueOf(saved);
         assertAll(
                 () -> assertNotNull(saved),
@@ -37,7 +37,7 @@ class PaymentServiceImplTest {
 
     @Test
     void read() {
-        Payment saved = service.save(payment);
+        Payment saved = service.create(payment);
         Optional<Payment> read = service.read(saved.getPaymentId());
         System.out.println(read);
         String output = String.valueOf(read.get());
@@ -48,13 +48,21 @@ class PaymentServiceImplTest {
     }
 
     @Test
+    void update() {
+        Payment saved = service.create(payment);
+        Payment updated = new Payment.Builder().copy(payment).setPaymentId("0005").build();
+        assertNotNull(updated);
+        System.out.println(updated);
+    }
+
+    @Test
     void delete() {
         this.service.delete(payment);
     }
 
     @Test
     void findByPaymentId() {
-        Payment saved = service.save(payment);
+        Payment saved = service.create(payment);
         String paymentId = saved.getPaymentId();
         List<Payment> paymentList = service.getAll(paymentId);
         System.out.println(paymentList);

@@ -19,12 +19,16 @@ public class PaymentServiceImpl implements PaymentService {
 
     public PaymentServiceImpl() {}
 
-    public Payment save (Payment payment) {
+    public Payment create (Payment payment) {
         return repository.save(payment);
     }
 
     public Optional<Payment> read (String paymentId) {
         return repository.findById(paymentId);
+    }
+
+    public Payment update (Payment payment) {
+        return repository.save(payment);
     }
 
     public void delete (Payment payment) {

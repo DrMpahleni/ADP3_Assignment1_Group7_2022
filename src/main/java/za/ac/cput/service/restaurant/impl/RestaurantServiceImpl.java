@@ -19,12 +19,16 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     public RestaurantServiceImpl() {}
 
-    public Restaurant save (Restaurant restaurant) {
+    public Restaurant create (Restaurant restaurant) {
         return repository.save(restaurant);
     }
 
     public Optional<Restaurant> read (String name) {
         return repository.findById(name);
+    }
+
+    public Restaurant update (Restaurant restaurant) {
+        return repository.save(restaurant);
     }
 
     public void delete (Restaurant restaurant) {
