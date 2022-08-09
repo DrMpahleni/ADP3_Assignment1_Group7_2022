@@ -7,7 +7,14 @@ package za.ac.cput.domain.supplier;
  */
 
 
-public class Ingredients {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Ingredients")
+
+public class Ingredients implements Serializable {
     private String ingredientName;
     private String ingredientType;
     private int amount;
