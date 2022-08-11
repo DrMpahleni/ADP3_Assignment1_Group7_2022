@@ -11,7 +11,7 @@ import za.ac.cput.domain.restaurant.Order;
 import za.ac.cput.util.genericHelper;
 
 public class OrderFactory {
-    public static Order createOrder(String orderItem, String date,int amount) {
+    public static Order createOrder(String orderItem, String date, int amount) {
         if (genericHelper.isNullOrEmpty(orderItem) || genericHelper.isNullOrEmpty(date))
             return null;
 
@@ -24,5 +24,9 @@ public class OrderFactory {
 
         return order;
 
+    }
+
+    public static Order createOrder(String orderItem) {
+        return null;
     }
 }
