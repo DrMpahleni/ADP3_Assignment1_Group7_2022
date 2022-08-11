@@ -6,8 +6,16 @@ package za.ac.cput.domain.restaurant;
    Due date: 07 August 2022
  */
 
-public class Order {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
+@Entity
+@Table(name = "Order")
+public class Order implements Serializable {
+
+    @Id
     private int orderId;
     private String orderItem;
     private String date;

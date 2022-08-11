@@ -6,7 +6,16 @@ package za.ac.cput.domain.race;
    Due date: 07 August 2022
  */
 
-public class Race {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Race")
+
+public class Race implements Serializable {
+    @Id
     private int id;
     private String name;
 

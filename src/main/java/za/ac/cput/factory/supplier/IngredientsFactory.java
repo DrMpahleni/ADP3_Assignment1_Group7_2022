@@ -21,4 +21,8 @@ public class IngredientsFactory {
 
         return ingredients;
     }
+
+    public static Ingredients createIngredients(String ingredientName) {
+        return null;
+    }
 }
