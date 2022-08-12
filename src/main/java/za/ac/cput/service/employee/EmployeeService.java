@@ -1,3 +1,10 @@
+/*
+    EmployeeService.java
+    Interface for Employee Service
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.service.employee;
 
 import za.ac.cput.domain.employee.Employee;

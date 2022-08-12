@@ -1,3 +1,10 @@
+/*
+    PaymentServiceImpl.java
+    Implementation for Payment Service
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.service.restaurant.impl;
 
 import org.springframework.stereotype.Service;

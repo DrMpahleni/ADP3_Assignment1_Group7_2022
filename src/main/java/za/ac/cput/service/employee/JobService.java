@@ -1,3 +1,10 @@
+/*
+    JobService.java
+    Interface for Job Service
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.service.employee;
 
 import za.ac.cput.domain.employee.Job;

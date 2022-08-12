@@ -1,4 +1,10 @@
 package za.ac.cput.service.restaurant.impl;
+/*
+    RestaurantServiceImpl.java
+    Implementation for Restaurant Service
+    Student: Ian Louw
+    Student Number: 216250773
+ */
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.restaurant.Restaurant;

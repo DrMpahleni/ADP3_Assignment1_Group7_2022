@@ -1,3 +1,10 @@
+/*
+    PaymentService.java
+    Interface for Payment Service
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.service.restaurant;
 
 import za.ac.cput.domain.restaurant.Payment;

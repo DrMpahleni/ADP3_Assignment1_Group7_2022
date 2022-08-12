@@ -1,3 +1,10 @@
+/*
+    JobServiceImpl.java
+    Implementation for Job Service
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.service.employee.impl;
 
 import org.springframework.stereotype.Service;
