@@ -1,8 +1,8 @@
 package za.ac.cput.repository.table;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Table;
-import za.ac.cput.factory.TableFactory;
+import za.ac.cput.domain.restaurant.Table;
+import za.ac.cput.factory.restaurant.TableFactory;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class tableRepositoryTest {
 
-    private static tableRepository repository = tableRepository.getRepository();
+    private static TableRepository repository = TableRepository.getRepository();
     private static Table table = TableFactory.createTable(13, 2);
 
     @Test

@@ -1,8 +1,8 @@
 package za.ac.cput.repository.customer;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Customer;
-import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.domain.role.Customer;
+import za.ac.cput.factory.role.CustomerFactory;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class customerRepositoryTest {
 
-    private static customerRepository repository = customerRepository.getRepository();
+    private static CustomerRepository repository = CustomerRepository.getRepository();
     private static Customer customer = CustomerFactory.createCustomer(2121,  "John");
 
     @Test

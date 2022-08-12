@@ -1,24 +1,32 @@
+/*
+CustomerRepository.java
+Author: Felecia Zweni (218330189)
+Date: August 2022
+ */
+
+
+
 package za.ac.cput.repository.customer;
-import za.ac.cput.entity.Customer;
+import za.ac.cput.domain.role.Customer;
 import za.ac.cput.repository.customer.impl.ICustomerRepository;
-import za.ac.cput.repository.employee.employeeRepository;
+
 
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class customerRepository implements ICustomerRepository{
+public class CustomerRepository implements ICustomerRepository {
 
-    private static customerRepository repository = null;
+    private static CustomerRepository repository = null;
     private Set<Customer> customerDB = null;
 
-    private customerRepository() {
+    private CustomerRepository() {
         customerDB = new HashSet<Customer>();
     }
 
-    public static customerRepository getRepository() {
+    public static CustomerRepository getRepository() {
         if (repository == null) {
-            repository = new customerRepository();
+            repository = new CustomerRepository();
         }
         return repository;
     }
@@ -31,8 +39,13 @@ public class customerRepository implements ICustomerRepository{
         return customer;
     }
 
+    @Override
+    public Customer read(String s) {
+        return null;
+    }
 
-    public Customer read(String customerId) {
+
+    public Customer read(int customerId) {
         Customer customer = customerDB.stream()
                 .filter(e -> e.getCustomerId().equals(customerId))
                 .findAny()

@@ -9,7 +9,7 @@ package za.ac.cput.domain.role;
 
 public class Receptionist {
 
-    private int receptionId;
+    private String receptionId;
     private int positionId;
 
     public Receptionist(){
@@ -31,7 +31,7 @@ public class Receptionist {
         return positionId;
     }
 
-    public void setReceptionId(int receptionId) {
+    public void setReceptionId(String receptionId) {
         this.receptionId = receptionId;
     }
 
@@ -49,10 +49,10 @@ public class Receptionist {
 
     public static class Builder{
 
-        private int receptionId;
+        private String receptionId;
         private int positionId;
 
-        public Builder setReceptionId(int receptionId){
+        public Builder setReceptionId(String receptionId){
             this.receptionId = receptionId;
             return this;
         }
