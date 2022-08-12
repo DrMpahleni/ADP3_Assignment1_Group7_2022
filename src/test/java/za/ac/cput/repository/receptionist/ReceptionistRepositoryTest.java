@@ -1,16 +1,18 @@
+
 package za.ac.cput.repository.receptionist;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Receptionist;
-import za.ac.cput.factory.ReceptionistFactory;
+import za.ac.cput.domain.role.Receptionist;
+
+import za.ac.cput.factory.role.ReceptionistFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class receptionistRepositoryTest {
+public class ReceptionistRepositoryTest {
 
-    private static receptionistRepository repository = receptionistRepository.getRepository();
-    private static Receptionist receptionist = ReceptionistFactory.createReceptionist(1300,1200);
+    private static ReceptionistRepository repository = ReceptionistRepository.getRepository();
+    private static Receptionist receptionist = ReceptionistFactory.createReceptionist(1200,1200);
 
     @Test
     void create() {
@@ -26,9 +28,9 @@ public class receptionistRepositoryTest {
         System.out.println("Read: " + read);
     }
 
-    @Test
+   @Test
     void update() {
-        Receptionist updated = new Receptionist.Builder().copy(receptionist).setReceptionId(300).build();
+        Receptionist updated = new Receptionist.Builder().copy(receptionist).setReceptionId("300").build();
         assertNotNull(repository.update(updated));
         System.out.println("Update: " + updated);
     }

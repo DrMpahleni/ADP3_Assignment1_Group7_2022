@@ -1,22 +1,28 @@
+/*
+TableFactory.java
+Author: Felecia Zweni (218330189)
+Date: August 2022
+ */
+
 package za.ac.cput.repository.table;
 
-import za.ac.cput.entity.Table;
+import za.ac.cput.domain.restaurant.Table;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class tableRepository {
+public class TableRepository {
 
-    private static tableRepository repository = null;
+    private static TableRepository repository = null;
     private Set<Table> tableDB = null;
 
-    private tableRepository() {
+    private TableRepository() {
         tableDB = new HashSet<Table>();
     }
 
-    public static tableRepository getRepository() {
+    public static TableRepository getRepository() {
         if (repository == null) {
-            repository = new tableRepository();
+            repository = new TableRepository();
         }
         return repository;
     }

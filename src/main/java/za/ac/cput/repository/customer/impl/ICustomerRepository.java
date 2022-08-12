@@ -1,6 +1,6 @@
 package za.ac.cput.repository.customer.impl;
 
-import za.ac.cput.entity.Customer;
+import za.ac.cput.domain.role.Customer;
 
 import za.ac.cput.repository.IRepository;
 

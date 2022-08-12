@@ -1,6 +1,12 @@
+/*
+IReservationRepository.java
+Author: Felecia Zweni (218330189)
+Date: August 2022
+ */
+
 package za.ac.cput.repository.reservation.impl;
 
-import za.ac.cput.entity.Reservation;
+import za.ac.cput.domain.restaurant.Reservation;
 import za.ac.cput.repository.IRepository;
 
 import java.util.Set;

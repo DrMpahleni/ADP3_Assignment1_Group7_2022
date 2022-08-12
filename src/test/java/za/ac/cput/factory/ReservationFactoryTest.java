@@ -3,7 +3,8 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Reservation;
+import za.ac.cput.domain.restaurant.Reservation;
+import za.ac.cput.factory.restaurant.ReservationFactory;
 
 
 import java.time.Duration;

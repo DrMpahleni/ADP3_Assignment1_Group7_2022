@@ -1,23 +1,30 @@
+/*
+ReceptionistRepository.java
+Author: Felecia Zweni 218330189
+Date: August 2022
+ */
+
+
 package za.ac.cput.repository.receptionist;
 
 
-import za.ac.cput.entity.Receptionist;
+import za.ac.cput.domain.role.Receptionist;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class receptionistRepository {
+public class ReceptionistRepository {
 
-    private static receptionistRepository repository = null;
+    private static ReceptionistRepository repository = null;
     private Set<Receptionist> receptionistDB = null;
 
-    private receptionistRepository() {
+    private ReceptionistRepository() {
         receptionistDB = new HashSet<Receptionist>();
     }
 
-    public static receptionistRepository getRepository() {
+    public static ReceptionistRepository getRepository() {
         if (repository == null) {
-            repository = new receptionistRepository();
+            repository = new ReceptionistRepository();
         }
         return repository;
     }

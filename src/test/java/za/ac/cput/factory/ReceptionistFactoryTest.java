@@ -3,8 +3,9 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Customer;
-import za.ac.cput.entity.Receptionist;
+
+import za.ac.cput.domain.role.Receptionist;
+import za.ac.cput.factory.role.ReceptionistFactory;
 
 import java.time.Duration;
 

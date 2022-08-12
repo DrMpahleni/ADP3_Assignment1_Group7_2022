@@ -3,7 +3,8 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Customer;
+import za.ac.cput.domain.role.Customer;
+import za.ac.cput.factory.role.CustomerFactory;
 
 import java.time.Duration;
 

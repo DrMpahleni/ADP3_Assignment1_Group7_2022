@@ -1,24 +1,30 @@
+/*
+ReservationRepository.java
+Author: Felecia Zweni(218330189)
+ */
+
 package za.ac.cput.repository.reservation;
 
 
-import za.ac.cput.entity.Reservation;
+
+import za.ac.cput.domain.restaurant.Reservation;
 import za.ac.cput.repository.reservation.impl.IReservationRepository;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class reservationRepository implements IReservationRepository {
+public class ReservationRepository implements IReservationRepository {
 
-    private static reservationRepository repository = null;
+    private static ReservationRepository repository = null;
     private Set<Reservation> reservationDB = null;
 
-    private reservationRepository() {
+    private ReservationRepository() {
         reservationDB = new HashSet<Reservation>();
     }
 
-    public static reservationRepository getRepository() {
+    public static ReservationRepository getRepository() {
         if (repository == null) {
-            repository = new reservationRepository();
+            repository = new ReservationRepository();
         }
         return repository;
     }
