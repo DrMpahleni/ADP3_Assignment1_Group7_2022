@@ -6,6 +6,50 @@ package za.ac.cput.service.employeeGender.Impl;
  Due Date: 7 August 2022
   */
 
-public class EmployeeGenderServiceImpl {
+import za.ac.cput.domain.gender.EmployeeGender;
+import za.ac.cput.repository.employeeGender.EmployeeGenderRepository;
+import za.ac.cput.service.employeeGender.IEmployeeGenderService;
 
+import java.util.Optional;
+import java.util.Set;
+
+public class EmployeeGenderServiceImpl implements IEmployeeGenderService {
+    private static EmployeeGenderServiceImpl employeeGender =null;
+    private EmployeeGenderRepository employeeGenderRepository;
+
+    public EmployeeGenderServiceImpl() {
+        this.employeeGenderRepository = EmployeeGenderRepository.getRepository();
+    }
+    public static EmployeeGenderServiceImpl getEmployeeContact(){
+
+        if (employeeGender == null) {
+            employeeGender = new EmployeeGenderServiceImpl();
+        }
+        return employeeGender;
+    }
+
+    @Override
+    public EmployeeGender create(EmployeeGender employeeGender) {
+        return this.employeeGenderRepository.create(employeeGender);
+    }
+
+    @Override
+    public Optional<EmployeeGender> read(String employeeId) {
+        return Optional.ofNullable(this.employeeGenderRepository.read(employeeId));
+    }
+
+    @Override
+    public EmployeeGender update(EmployeeGender employeeGender) {
+        return this.employeeGenderRepository.update(employeeGender);
+    }
+
+    @Override
+    public void delete(EmployeeGender employeeGender) {
+    return;
+    }
+
+    @Override
+    public Set<EmployeeGender> getAll() {
+        return this.employeeGenderRepository.getAll();
+    }
 }
