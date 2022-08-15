@@ -8,9 +8,12 @@ package za.ac.cput.service.Supplier;
 import za.ac.cput.domain.supplier.Ingredients;
 import za.ac.cput.service.IService;
 
+import java.util.List;
 import java.util.Set;
 
 public interface IIngredientsService extends IService<Ingredients, String> {
     public Set<Ingredients> getAll();
     public Ingredients getIngredientsGiven(String ingredientName);
+
+    List<Ingredients> getAll(String ingredientName);
 }

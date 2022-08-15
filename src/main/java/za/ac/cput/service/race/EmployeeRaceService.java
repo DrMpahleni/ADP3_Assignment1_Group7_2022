@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.repository.race.EmployeeRaceRepository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -64,6 +65,11 @@ public class EmployeeRaceService implements IEmployeeRaceService {
             }
         }
         return e;
+    }
+
+    @Override
+    public List<EmployeeRace> getAll(Integer raceId) {
+        return repository.findAll();
     }
 }
 
