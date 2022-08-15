@@ -53,6 +53,8 @@ public class ContactType {
             this.name = contactType.name;
             return this;
         }
+
+
     }
 
 }
