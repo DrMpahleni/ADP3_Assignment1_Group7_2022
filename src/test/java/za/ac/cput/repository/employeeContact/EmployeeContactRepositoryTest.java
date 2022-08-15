@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeContactRepositoryTest {
     private static EmployeeContactRepository repository = EmployeeContactRepository.getRepository();
-    private static EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact(2181922, 66087, "ntand@gmail.com");
+    private static EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact(2181922, "email22", "ntand@gmail.com");
 
     @Test
     void create() {
