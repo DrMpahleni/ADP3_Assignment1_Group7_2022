@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.domain.supplier.Ingredients;
 import za.ac.cput.repository.supplier.IngredientsRepository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -61,6 +62,12 @@ public class IngredientsService implements IIngredientsService {
             }
         }
         return i;
+    }
+
+    @Override
+    public List<Ingredients> getAll(String ingredientName) {
+
+        return repository.findAll();
     }
 }
 
