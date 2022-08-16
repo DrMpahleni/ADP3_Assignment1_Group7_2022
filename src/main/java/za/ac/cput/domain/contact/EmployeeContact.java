@@ -7,7 +7,7 @@ package za.ac.cput.domain.contact;
   */
 public class EmployeeContact {
     private String  employeeId;
-    private int contactTypeId;
+    private String contactTypeId;
     private String contact;
 
     public EmployeeContact(){
@@ -23,7 +23,7 @@ public class EmployeeContact {
         return employeeId;
     }
 
-    public int getContactTypeId() {
+    public String getContactTypeId() {
         return contactTypeId;
     }
 
@@ -41,7 +41,7 @@ public class EmployeeContact {
     }
     public static class Builder{
         private String employeedId;
-        private int contactTypeId;
+        private String contactTypeId;
         private String contact;
 
 
@@ -50,7 +50,7 @@ public class EmployeeContact {
             return this;
         }
 
-        public Builder setContactTypeId(int contactTypeId) {
+        public Builder setContactTypeId(String contactTypeId) {
             this.contactTypeId = contactTypeId;
             return this;
         }
@@ -66,7 +66,7 @@ public class EmployeeContact {
 
         public Builder copy(EmployeeContact employeeContact){
             this.employeedId = employeeContact.employeeId;
-            this.contactTypeId = employeeContact.contactTypeId;
+            this.contactTypeId = employeeContact.getContactTypeId();
             this.contact = employeeContact.contact;
             return this;
         }
