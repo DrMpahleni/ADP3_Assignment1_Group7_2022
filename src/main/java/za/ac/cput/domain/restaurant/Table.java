@@ -7,7 +7,17 @@ Date: 10 April 2022
 
 package za.ac.cput.domain.restaurant;
 
-public class Table {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
+@Entity
+@javax.persistence.Table(name = "Table")
+
+
+public class Table implements Serializable {
+
+    @Id
     private int tblNum;
     private int seatAmount;
 

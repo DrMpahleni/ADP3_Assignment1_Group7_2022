@@ -1,10 +1,11 @@
 /*
-ReservationControllerTest.java
-Author: Felecia Zweni (218330189)
+CustomerControllerTest.java
+This is customer controller test class.
+Author: Felecia Zweni(218330189)
 Date: August 2022
  */
 
-package za.ac.cput.controller.restaurant;
+package za.ac.cput.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,43 +15,44 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import za.ac.cput.domain.restaurant.Reservation;
-import za.ac.cput.service.restaurant.ReservationService;
-
+import za.ac.cput.controller.role.CustomerController;
+import za.ac.cput.domain.role.Customer;
+import za.ac.cput.service.role.CustomerService;
 
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ReservationControllerTest {
+
+public class CustomerControllerTest {
 
     @LocalServerPort
     private int port;
     @Autowired
     private TestRestTemplate restTemplate;
-    @Autowired private ReservationController controller;
-    @Autowired private ReservationService service;
+    @Autowired private CustomerController controller;
+    @Autowired private CustomerService service;
 
-    private Reservation reservation;
+    private Customer customer;
     private String baseUrl;
 
     @BeforeEach
     void setUp() {
-        reservation  = new Reservation.Builder()
-                .setName("Michael")
-                .setAmount(4)
-                .setDate("12/08/2022")
+        customer  = new Customer.Builder()
+                .setCustomerId("1333")
+                .setCustomerName("William")
                 .build();
-        this.baseUrl = "http://localhost:" + this.port + "restaurant/reservation";
+        this.baseUrl = "http://localhost:" + this.port + "role/customer";
     }
 
     @Test
     void save() {
         String url = baseUrl + "save/";
         System.out.println(url);
-        ResponseEntity<Reservation> response = this.restTemplate
-                .postForEntity(url, this.reservation, Reservation.class);
+        ResponseEntity<Customer> response = this.restTemplate
+                .postForEntity(url, this.customer, Customer.class);
         System.out.println(response);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -60,9 +62,9 @@ public class ReservationControllerTest {
 
     @Test
     void read() {
-        String url = baseUrl + "read/" + this.reservation.getName();
+        String url = baseUrl + "read/" + this.customer.getCustomerName();
         System.out.println(url);
-        ResponseEntity<Reservation> response = this.restTemplate.getForEntity(url, Reservation.class);
+        ResponseEntity<Customer> response = this.restTemplate.getForEntity(url, Customer.class);
         System.out.println(response);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -72,7 +74,7 @@ public class ReservationControllerTest {
 
     @Test
     void delete() {
-        String url = baseUrl + "delete/" + this.reservation.getName();
+        String url = baseUrl + "delete/" + this.customer.getCustomerName();
         this.restTemplate.delete(url);
     }
 
@@ -80,8 +82,8 @@ public class ReservationControllerTest {
     void getAll() {
         String url = baseUrl + "all/";
         System.out.println(url);
-        ResponseEntity<Reservation[]> response =
-                this.restTemplate.getForEntity(url, Reservation[].class);
+        ResponseEntity<Customer[]> response =
+                this.restTemplate.getForEntity(url, Customer[].class);
         System.out.println(Arrays.asList(response.getBody()));
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -89,3 +91,4 @@ public class ReservationControllerTest {
         );
     }
 }
+

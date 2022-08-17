@@ -17,14 +17,14 @@ public class CustomerFactoryTest {
 
     @BeforeEach
     void setUp(){
-        Customer customer1 = new Customer.Builder().setCustomerName("Felecia").setCustomerId(1222).build();
+        Customer customer1 = new Customer.Builder().setCustomerName("Felecia").setCustomerId("1222").build();
         Customer customer2 = customer1;
     }
 
     @Test
     public void test(){
 
-        Customer customer = CustomerFactory.createCustomer(1222, "Felecia");
+        Customer customer = CustomerFactory.createCustomer("1222", "Felecia");
         System.out.println(customer.toString());
         assertNotNull(customer);
 
