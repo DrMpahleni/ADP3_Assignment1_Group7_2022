@@ -1,3 +1,9 @@
+/*
+ReceptionistRepositoryTest.java
+This is receptionist repository test class.
+Author: Felecia Zweni(218330189)
+Date: August 2022
+ */
 
 package za.ac.cput.repository.receptionist;
 
@@ -12,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class ReceptionistRepositoryTest {
 
     private static ReceptionistRepository repository = ReceptionistRepository.getRepository();
-    private static Receptionist receptionist = ReceptionistFactory.createReceptionist(1200,1200);
+    private static Receptionist receptionist = ReceptionistFactory.createReceptionist("1200",1200);
 
     @Test
     void create() {

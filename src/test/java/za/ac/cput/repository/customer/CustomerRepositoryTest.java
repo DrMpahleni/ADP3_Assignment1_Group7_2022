@@ -1,3 +1,10 @@
+/*
+CustomerFactoryTest.java
+This is customer repository test class.
+Author: Felecia Zweni(218330189)
+Date: August 2022
+ */
+
 package za.ac.cput.repository.customer;
 
 import org.junit.jupiter.api.Test;
@@ -8,10 +15,10 @@ import za.ac.cput.factory.role.CustomerFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class customerRepositoryTest {
+public class CustomerRepositoryTest {
 
     private static CustomerRepository repository = CustomerRepository.getRepository();
-    private static Customer customer = CustomerFactory.createCustomer(2121,  "John");
+    private static Customer customer = CustomerFactory.createCustomer("2121",  "John");
 
     @Test
     void create() {

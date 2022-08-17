@@ -6,13 +6,21 @@ Date: 10 April 2022
  */
 
 package za.ac.cput.domain.restaurant;
-
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Entity;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Reservation {
+@Entity
+@Table(name = "Reservation")
+
+public class Reservation implements Serializable {
+
+    @Id
     private String name;
     private int amount;
-    private Date date;
+    private String date;
 
     public Reservation(){
 
@@ -35,11 +43,11 @@ public class Reservation {
         return amount;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -64,7 +72,7 @@ public class Reservation {
 
         private String name;
         private int amount;
-        private Date date;
+        private String date;
 
         public Reservation.Builder setName(String name){
             this.name = name;
@@ -76,7 +84,7 @@ public class Reservation {
             return this;
         }
 
-        public Reservation.Builder setDate(Date date){
+        public Reservation.Builder setDate(String date){
             this.date = date;
             return this;
         }

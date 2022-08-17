@@ -7,8 +7,17 @@ Date: 10 April 2022
 
 package za.ac.cput.domain.role;
 
-public class Receptionist {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
+@Entity
+@Table(name = "Receptionist")
+
+public class Receptionist implements Serializable {
+
+    @Id
     private String receptionId;
     private int positionId;
 

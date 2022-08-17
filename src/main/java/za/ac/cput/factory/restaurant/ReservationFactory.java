@@ -12,7 +12,7 @@ import za.ac.cput.util.genericHelper;
 import java.util.Date;
 
 public class ReservationFactory {
-    public static Reservation createReservation(String name, int amount, Date date){
+    public static Reservation createReservation(String name, int amount, String date){
 
         String reservationID = genericHelper.generateId();
 

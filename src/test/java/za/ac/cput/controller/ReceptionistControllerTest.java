@@ -1,10 +1,11 @@
 /*
-ReservationControllerTest.java
-Author: Felecia Zweni (218330189)
+ReceptionistControllerTest.java
+This is receptionist controller test class.
+Author: Felecia Zweni(218330189)
 Date: August 2022
  */
 
-package za.ac.cput.controller.restaurant;
+package za.ac.cput.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,8 +15,9 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import za.ac.cput.domain.restaurant.Reservation;
-import za.ac.cput.service.restaurant.ReservationService;
+import za.ac.cput.controller.role.ReceptionistController;
+import za.ac.cput.domain.role.Receptionist;
+import za.ac.cput.service.role.ReceptionistService;
 
 
 import java.util.Arrays;
@@ -23,34 +25,33 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ReservationControllerTest {
+public class ReceptionistControllerTest {
 
     @LocalServerPort
     private int port;
     @Autowired
     private TestRestTemplate restTemplate;
-    @Autowired private ReservationController controller;
-    @Autowired private ReservationService service;
+    @Autowired private ReceptionistController controller;
+    @Autowired private ReceptionistService service;
 
-    private Reservation reservation;
+    private Receptionist receptionist;
     private String baseUrl;
 
     @BeforeEach
     void setUp() {
-        reservation  = new Reservation.Builder()
-                .setName("Michael")
-                .setAmount(4)
-                .setDate("12/08/2022")
+        receptionist  = new Receptionist.Builder()
+                .setReceptionId("1200")
+                .setPositionId(4)
                 .build();
-        this.baseUrl = "http://localhost:" + this.port + "restaurant/reservation";
+        this.baseUrl = "http://localhost:" + this.port + "role/receptionist";
     }
 
     @Test
     void save() {
         String url = baseUrl + "save/";
         System.out.println(url);
-        ResponseEntity<Reservation> response = this.restTemplate
-                .postForEntity(url, this.reservation, Reservation.class);
+        ResponseEntity<Receptionist> response = this.restTemplate
+                .postForEntity(url, this.receptionist, Receptionist.class);
         System.out.println(response);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -60,9 +61,9 @@ public class ReservationControllerTest {
 
     @Test
     void read() {
-        String url = baseUrl + "read/" + this.reservation.getName();
+        String url = baseUrl + "read/" + this.receptionist.getReceptionId();
         System.out.println(url);
-        ResponseEntity<Reservation> response = this.restTemplate.getForEntity(url, Reservation.class);
+        ResponseEntity<Receptionist> response = this.restTemplate.getForEntity(url, Receptionist.class);
         System.out.println(response);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -72,7 +73,7 @@ public class ReservationControllerTest {
 
     @Test
     void delete() {
-        String url = baseUrl + "delete/" + this.reservation.getName();
+        String url = baseUrl + "delete/" + this.receptionist.getReceptionId();
         this.restTemplate.delete(url);
     }
 
@@ -80,8 +81,8 @@ public class ReservationControllerTest {
     void getAll() {
         String url = baseUrl + "all/";
         System.out.println(url);
-        ResponseEntity<Reservation[]> response =
-                this.restTemplate.getForEntity(url, Reservation[].class);
+        ResponseEntity<Receptionist[]> response =
+                this.restTemplate.getForEntity(url, Receptionist[].class);
         System.out.println(Arrays.asList(response.getBody()));
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
