@@ -1,3 +1,10 @@
+/*
+CustomerController.java
+This is customer controller class.
+Author: Felecia Zweni(218330189)
+Date: August 2022
+ */
+
 package za.ac.cput.controller.role;
 
 import lombok.extern.slf4j.Slf4j;

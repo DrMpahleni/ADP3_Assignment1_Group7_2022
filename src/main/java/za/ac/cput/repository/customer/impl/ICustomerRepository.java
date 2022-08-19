@@ -1,3 +1,10 @@
+/*
+ICustomerRepository.java
+This is customer repository class.
+Author: Felecia Zweni(218330189)
+Date: August 2022
+ */
+
 package za.ac.cput.repository.customer.impl;
 
 import za.ac.cput.domain.role.Customer;

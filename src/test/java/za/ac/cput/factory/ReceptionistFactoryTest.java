@@ -1,3 +1,10 @@
+/*
+ReceptionistFactoryTest.java
+This is receptionist factory test class.
+Author: Felecia Zweni(218330189)
+Date: August 2022
+ */
+
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +24,7 @@ public class ReceptionistFactoryTest {
 
     @BeforeEach
     void setUp(){
-        Receptionist receptionist1 = new Receptionist.Builder().setReceptionId(1200).setPositionId(1201).build();
+        Receptionist receptionist1 = new Receptionist.Builder().setReceptionId("1200").setPositionId(1201).build();
         Receptionist receptionist2  = receptionist1;
     }
 
@@ -25,7 +32,7 @@ public class ReceptionistFactoryTest {
     @Test
     public void test(){
 
-        Receptionist receptionist = ReceptionistFactory.createReceptionist(1200, 1201);
+        Receptionist receptionist = ReceptionistFactory.createReceptionist("1200", 1201);
         System.out.println(receptionist.toString());
         assertNotNull(receptionist);
 

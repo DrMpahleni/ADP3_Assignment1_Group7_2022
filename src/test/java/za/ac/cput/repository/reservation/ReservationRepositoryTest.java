@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class ReservationRepositoryTest {
 
     private static ReservationRepository repository = ReservationRepository.getRepository();
-    private static Reservation reservation = ReservationFactory.createReservation("Julia", 1000, 22-05-12);
+    private static Reservation reservation = ReservationFactory.createReservation("Julia", 1000, "12/05/2022");
 
     @Test
     void create() {

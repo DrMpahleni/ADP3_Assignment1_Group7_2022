@@ -18,7 +18,7 @@ public class ReservationFactoryTest {
 
     @BeforeEach
     void setUp(){
-        Reservation reservation1 = new Reservation.Builder().setName("Michaelangelo").setAmount(500).setDate(22-05-12/).build();
+        Reservation reservation1 = new Reservation.Builder().setName("Michaelangelo").setAmount(500).setDate("22/05/2022").build();
         Reservation reservation2  = reservation1;
     }
 
@@ -26,7 +26,7 @@ public class ReservationFactoryTest {
     @Test
     public void test(){
 
-        Reservation reservation = ReservationFactory.createReservation("Michael",1200, 22/05/12/);
+        Reservation reservation = ReservationFactory.createReservation("Michael",1200, "22/05/2022");
         System.out.println(reservation.toString());
         assertNotNull(reservation);
 

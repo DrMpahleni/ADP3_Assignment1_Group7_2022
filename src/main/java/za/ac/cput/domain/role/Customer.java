@@ -7,8 +7,17 @@ Date: 10 April 2022
 
 package za.ac.cput.domain.role;
 
-public class Customer {
-    private int customerId;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Customer")
+
+public class Customer implements Serializable {
+    @Id
+    private String customerId;
     private String customerName;
 
     public Customer(){
@@ -31,7 +40,7 @@ public class Customer {
         return customerName;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
@@ -49,10 +58,10 @@ public class Customer {
 
     public static class Builder{
 
-        private int customerId;
+        private String customerId;
         private String customerName;
 
-        public Customer.Builder setCustomerId(int customerId){
+        public Customer.Builder setCustomerId(String customerId){
             this.customerId = customerId;
 
             return this;
