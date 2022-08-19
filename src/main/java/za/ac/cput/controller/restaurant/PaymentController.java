@@ -1,3 +1,10 @@
+/*
+    PaymentController.java
+    Controller for Payment
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.controller.restaurant;
 
 import lombok.extern.slf4j.Slf4j;

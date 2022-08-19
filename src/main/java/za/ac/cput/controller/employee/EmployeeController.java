@@ -1,3 +1,10 @@
+/*
+    EmployeeController.java
+    Controller for Employee
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.controller.employee;
 
 import lombok.extern.slf4j.Slf4j;
