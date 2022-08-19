@@ -27,7 +27,7 @@ public class JobController {
     @PostMapping("save")
     public ResponseEntity<Job> save (@Valid @RequestBody Job job) {
         log.info("Save request: {}", job);
-        Job save = jobService.save(job);
+        Job save = jobService.create(job);
         return ResponseEntity.ok(save);
     }
 
@@ -41,6 +41,13 @@ public class JobController {
         Job job = getById(jobId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(job);
+    }
+
+    @PutMapping("update")
+    public ResponseEntity<Job> update (@Valid @RequestBody Job job) {
+        log.info("Update request: {}", job);
+        Job updated = jobService.update(job);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("delete")
