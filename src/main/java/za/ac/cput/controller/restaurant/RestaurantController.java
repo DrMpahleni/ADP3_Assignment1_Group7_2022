@@ -1,3 +1,10 @@
+/*
+    RestaurantController.java
+    Controller for Restaurant
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.controller.restaurant;
 
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +34,7 @@ public class RestaurantController {
     @PostMapping("save")
     public ResponseEntity<Restaurant> save (@Valid @RequestBody Restaurant restaurant) {
         log.info("Save request: {}", restaurant);
-        Restaurant save = restaurantService.save(restaurant);
+        Restaurant save = restaurantService.create(restaurant);
         return ResponseEntity.ok(save);
     }
 
@@ -41,6 +48,13 @@ public class RestaurantController {
         Restaurant employee = getById(name)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(employee);
+    }
+
+    @PutMapping("update")
+    public ResponseEntity<Restaurant> update (@Valid @RequestBody Restaurant restaurant) {
+        log.info("Update request: {}", restaurant);
+        Restaurant updated = restaurantService.update(restaurant);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("delete")

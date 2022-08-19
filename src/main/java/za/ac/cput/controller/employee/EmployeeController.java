@@ -1,3 +1,10 @@
+/*
+    EmployeeController.java
+    Controller for Employee
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.controller.employee;
 
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +34,7 @@ public class EmployeeController {
     @PostMapping("save")
     public ResponseEntity<Employee> save (@Valid @RequestBody Employee employee) {
         log.info("Save request: {}", employee);
-        Employee save = employeeService.save(employee);
+        Employee save = employeeService.create(employee);
         return ResponseEntity.ok(save);
     }
 
@@ -41,6 +48,13 @@ public class EmployeeController {
         Employee employee = getById(employeeId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(employee);
+    }
+
+    @PutMapping("update")
+    public ResponseEntity<Employee> update (@Valid @RequestBody Employee employee) {
+        log.info("Update request: {}", employee);
+        Employee updated = employeeService.update(employee);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("delete")

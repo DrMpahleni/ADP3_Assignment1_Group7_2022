@@ -1,3 +1,10 @@
+/*
+    PaymentController.java
+    Controller for Payment
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.controller.restaurant;
 
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +33,7 @@ public class PaymentController {
     @PostMapping("save")
     public ResponseEntity<Payment> save (@Valid @RequestBody Payment payment) {
         log.info("Save request: {}", payment);
-        Payment save = paymentService.save(payment);
+        Payment save = paymentService.create(payment);
         return ResponseEntity.ok(save);
     }
 
@@ -40,6 +47,13 @@ public class PaymentController {
         Payment employee = getById(paymentId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(employee);
+    }
+
+    @PutMapping("update")
+    public ResponseEntity<Payment> update (@Valid @RequestBody Payment payment) {
+        log.info("Update request: {}", payment);
+        Payment updated = paymentService.update(payment);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("delete")

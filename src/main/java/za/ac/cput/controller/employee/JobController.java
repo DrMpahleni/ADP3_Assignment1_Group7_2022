@@ -1,3 +1,10 @@
+/*
+    JobController.java
+    Controller for Job
+    Student: Ian Louw
+    Student Number: 216250773
+ */
+
 package za.ac.cput.controller.employee;
 
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +34,7 @@ public class JobController {
     @PostMapping("save")
     public ResponseEntity<Job> save (@Valid @RequestBody Job job) {
         log.info("Save request: {}", job);
-        Job save = jobService.save(job);
+        Job save = jobService.create(job);
         return ResponseEntity.ok(save);
     }
 
@@ -41,6 +48,13 @@ public class JobController {
         Job job = getById(jobId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(job);
+    }
+
+    @PutMapping("update")
+    public ResponseEntity<Job> update (@Valid @RequestBody Job job) {
+        log.info("Update request: {}", job);
+        Job updated = jobService.update(job);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("delete")
