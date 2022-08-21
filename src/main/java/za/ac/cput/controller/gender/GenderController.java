@@ -1,41 +1,50 @@
 package za.ac.cput.controller.gender;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.domain.gender.EmployeeGender;
-import za.ac.cput.factory.gender.EmployeeGenderFactory;
-import za.ac.cput.service.employeeGender.Impl.EmployeeGenderServiceImpl;
+import za.ac.cput.domain.gender.Gender;
+import za.ac.cput.factory.gender.GenderFactory;
+import za.ac.cput.service.gender.Impl.GenderServiceImpl;
 
 import java.util.Optional;
 import java.util.Set;
 
+@RestController
+@RequestMapping("restaurant/gender/")
+@Slf4j
+
 public class GenderController {
     @Autowired
-    private EmployeeGenderServiceImpl employeeGenderService;
+    private GenderServiceImpl genderService;
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public EmployeeGender create(@RequestBody EmployeeGender employeeGender){
-        EmployeeGender newEmployeeGender = EmployeeGenderFactory.createEmployeeGender(employeeGender.getEmployeeId(), employeeGender.getGenderId());
-        return employeeGenderService.create(employeeGender);
+    public Gender create(@RequestBody Gender gender){
+        Gender newGender = GenderFactory.createGender(gender.getId(), gender.getName());
+        return genderService.create(gender);
     }
 
     @RequestMapping("/read/{Id}")
-    public Optional<EmployeeGender> read(@PathVariable String employeeId){
-        return employeeGenderService.read(employeeId);
+    public Optional<Gender> read(@PathVariable String employeeId){
+        return genderService.read(employeeId);
     }
 
     @PostMapping("/update")
-    public EmployeeGender update(@RequestBody EmployeeGender employeeGender){
-        return employeeGenderService.update(employeeGender);
+    public Gender update(@RequestBody Gender gender){
+        return genderService.update(gender);
     }
 
-    @DeleteMapping("/delete/Id")
-    public boolean delete (@PathVariable String employeeId){
-        return employeeGenderService.delete(employeeId);
+
+    @DeleteMapping("delete")
+    public ResponseEntity<Void> delete(@PathVariable String employeeId) {
+        log.info("Read request: {}", employeeId);
+        this.genderService.deleteById(employeeId);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getAll")
-    public Set<EmployeeGender> getEmployeeGender(){
-        return employeeGenderService.getAll();
+    public Set<Gender> getEmployeeGender(){
+        return genderService.getAll();
     }
 }

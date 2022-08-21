@@ -1,6 +1,8 @@
 package za.ac.cput.controller.employeeGender;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.gender.EmployeeGender;
 import za.ac.cput.factory.gender.EmployeeGenderFactory;
@@ -8,6 +10,10 @@ import za.ac.cput.service.employeeGender.Impl.EmployeeGenderServiceImpl;
 
 import java.util.Optional;
 import java.util.Set;
+
+@RestController
+@RequestMapping("restaurant/employeeGender/")
+@Slf4j
 
 public class EmployeeGenderController {
     @Autowired
@@ -29,9 +35,11 @@ public class EmployeeGenderController {
         return employeeGenderService.update(employeeGender);
     }
 
-    @DeleteMapping("/delete/Id")
-    public boolean delete (@PathVariable String employeeId){
-        return employeeGenderService.delete(employeeId);
+    @DeleteMapping("delete")
+    public ResponseEntity<Void> delete(@PathVariable String employeeId) {
+        log.info("Read request: {}", employeeId);
+        this.employeeGenderService.deleteById(employeeId);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getAll")
