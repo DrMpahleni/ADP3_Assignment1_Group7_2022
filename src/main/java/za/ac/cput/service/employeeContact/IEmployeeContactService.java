@@ -12,4 +12,5 @@ import java.util.Set;
   */
 public interface IEmployeeContactService extends IService<EmployeeContact, String> {
     Set<EmployeeContact> getAll();
+    void deleteById(String employeeId);
 }
