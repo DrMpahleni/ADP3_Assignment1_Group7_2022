@@ -3,7 +3,7 @@ package za.ac.cput.controller.race;
 /* EmployeeRaceController.java
 this is EmployeeRace controller class
 @Author: Lihle Njobe(218193882)
-Due date: 07 August 2022
+Due date: 21 August 2022
  */
 
 import org.springframework.beans.factory.annotation.Autowired;

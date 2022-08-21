@@ -1,5 +1,11 @@
 package za.ac.cput.controller.supplier;
 
+/*IngredientsControllerJava
+  This is Ingredients controller
+  @Author: Lihle Njobe(218193883)
+  Due date: 21 August 2022
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.supplier.Ingredients;
