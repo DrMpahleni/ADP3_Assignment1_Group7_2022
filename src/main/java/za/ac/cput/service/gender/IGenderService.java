@@ -12,4 +12,5 @@ import java.util.Set;
   */
 public interface IGenderService extends IService<Gender, String> {
     Set<Gender> getAll();
+    void deleteById(String employeeId);
 }

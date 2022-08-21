@@ -1,5 +1,6 @@
 package za.ac.cput.service.contactType.Impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.domain.contact.ContactType;
 import za.ac.cput.repository.contactType.ContactTypeRepository;
 import za.ac.cput.service.contactType.IContactTypeService;
@@ -7,6 +8,7 @@ import za.ac.cput.service.contactType.IContactTypeService;
 import java.util.Optional;
 import java.util.Set;
 
+@Service
 public class ContactTypeServiceImpl implements IContactTypeService {
     private static ContactTypeServiceImpl contactTypeService = null;
     private ContactTypeRepository contactTypeRepository;
@@ -44,5 +46,11 @@ public class ContactTypeServiceImpl implements IContactTypeService {
     @Override
     public Set<ContactType> getAll() {
         return this.contactTypeRepository.getAll();
+    }
+
+    @Override
+    public void deleteById(String Id) {
+        Optional<ContactType> contactType = read(Id);
+        if (contactType.isPresent()) delete(contactType.get());
     }
 }

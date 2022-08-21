@@ -8,4 +8,6 @@ import java.util.Set;
 public interface IContactTypeService extends IService<ContactType, String> {
     Set<ContactType> getAll();
 
+    void deleteById(String Id);
+
 }

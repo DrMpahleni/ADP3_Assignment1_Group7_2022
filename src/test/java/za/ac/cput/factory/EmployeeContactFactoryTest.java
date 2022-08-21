@@ -29,7 +29,7 @@ class EmployeeContactFactoryTest {
     @Test
     public void test() {
 
-        EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact(2181933, ("empNumb08"), "SinoNka");
+        EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact("2181933@mycput", ("empNumb08"), "SinoNka");
         System.out.println(employeeContact.toString());
         assertNotNull(employeeContact);
     }
