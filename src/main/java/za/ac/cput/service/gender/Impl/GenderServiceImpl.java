@@ -6,13 +6,16 @@ package za.ac.cput.service.gender.Impl;
  Due Date: 7 August 2022
   */
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.domain.gender.Gender;
 import za.ac.cput.repository.gender.GenderRepository;
 import za.ac.cput.service.gender.IGenderService;
 
 import java.util.Optional;
 import java.util.Set;
-
+@Service
 public class GenderServiceImpl implements IGenderService {
     private static GenderServiceImpl gender =null;
     private GenderRepository genderRepository;
@@ -51,5 +54,11 @@ public class GenderServiceImpl implements IGenderService {
     @Override
     public Set<Gender> getAll() {
         return this.genderRepository.getAll();
+    }
+
+    @Override
+    public void deleteById(String employeeId) {
+        Optional<Gender> gender = read(employeeId);
+        if (gender.isPresent()) delete(gender.get());
     }
 }

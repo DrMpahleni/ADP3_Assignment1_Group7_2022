@@ -6,13 +6,16 @@ package za.ac.cput.service.employeeContact.Impl;
  Due Date: 7 August 2022
   */
 
+import org.springframework.stereotype.Service;
+import za.ac.cput.domain.contact.ContactType;
 import za.ac.cput.domain.contact.EmployeeContact;
+import za.ac.cput.domain.gender.Gender;
 import za.ac.cput.repository.employeeContact.EmployeeContactRepository;
 import za.ac.cput.service.employeeContact.IEmployeeContactService;
 
 import java.util.Optional;
 import java.util.Set;
-
+@Service
 public class EmployeeContactServiceImpl implements IEmployeeContactService {
     private static EmployeeContactServiceImpl employeeContact =null;
     private EmployeeContactRepository employeeContactRepository;
@@ -51,5 +54,11 @@ public class EmployeeContactServiceImpl implements IEmployeeContactService {
     @Override
     public Set<EmployeeContact> getAll() {
         return this.employeeContactRepository.getAll();
+    }
+
+    @Override
+    public void deleteById(String employeeId) {
+        Optional<EmployeeContact> employeeContact = read(employeeId);
+        if (employeeContact.isPresent()) delete(employeeContact.get());
     }
 }

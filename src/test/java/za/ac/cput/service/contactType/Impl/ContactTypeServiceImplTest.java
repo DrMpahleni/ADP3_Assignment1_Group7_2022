@@ -6,9 +6,7 @@ package za.ac.cput.service.contactType.Impl;
   Due Date: August 2022
   */
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.contact.ContactType;
@@ -18,13 +16,15 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@TestMethodOrder(MethodOrderer.MethodName.class)
+
 @SpringBootTest
 
 public class ContactTypeServiceImplTest {
-@Autowired
-    private ContactTypeServiceImpl contactTypeService;
+
 private static ContactType contactType = ContactTypeFactory.createContactType("VUY20220101","Mavo");
+
+    @Autowired
+    private ContactTypeServiceImpl contactTypeService;
 
 @Test
     void create(){

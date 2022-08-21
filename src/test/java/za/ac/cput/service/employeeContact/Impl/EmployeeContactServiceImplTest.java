@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeeContactServiceImplTest {
     @Autowired
     private EmployeeContactServiceImpl employeeContactService;
-    private static EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact(222570, "email2214", "email");
+    private static EmployeeContact employeeContact = EmployeeContactFactory.createEmployeeContact("SR222570", "email2214", "email");
 
     @Test
     void create() {

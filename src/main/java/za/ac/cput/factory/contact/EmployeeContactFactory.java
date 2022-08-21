@@ -9,7 +9,7 @@ import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.util.genericHelper;
 
 public class EmployeeContactFactory {
-    public static EmployeeContact createEmployeeContact(int employeeId, String contactTypeId, String contact){
+    public static EmployeeContact createEmployeeContact(String employeeId, String contactTypeId, String contact){
 
         String employeeID = genericHelper.generateId();
     EmployeeContact employeeContact = new EmployeeContact.Builder().setEmployeeID(employeeID)
@@ -19,5 +19,7 @@ public class EmployeeContactFactory {
     return employeeContact;
 
 }
+
+
 }
 
