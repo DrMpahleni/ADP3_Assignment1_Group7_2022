@@ -7,6 +7,7 @@ Date: 02 April 2022
 */
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,9 +19,9 @@ public class MenuItem implements Serializable {
 
     @Id
     private int menuItemID;
-
+    @Column(length = 10,name = "price")
     private Double price;
-
+    @Column(length = 25,name = "portion")
     private String portion ;
 
     protected MenuItem (){
