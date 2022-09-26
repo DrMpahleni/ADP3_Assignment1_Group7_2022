@@ -7,6 +7,7 @@ Date: 02 April 2022
 */
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,13 +19,13 @@ public class Supplier implements Serializable {
 
     @Id
     private int supplierID;
-
+    @Column(length = 25,name = "supplier Name")
     private String supplierName;
-
+    @Column(length = 25,name = "supplier Email ")
     private String supplierEmail;
-
+    @Column(length = 10,name = "supplier phone")
     private String supplierPhone;
-
+    @Column(length = 25,name = "supplier address ")
     private String supplierAddress;
 
     protected Supplier() {
