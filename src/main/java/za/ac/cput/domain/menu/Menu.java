@@ -6,6 +6,7 @@ Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -17,7 +18,7 @@ public class Menu implements Serializable {
 
     @Id
     private int menuID;
-
+    @Column(length = 25,nullable = false, name = "name")
     private String name;
 
     protected Menu() {
