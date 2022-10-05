@@ -11,3 +11,8 @@ spring:
     url: jdbc:mysql://localhost:3306/restaurantManagementTestSystem?createDatabaseIfNotExist=true
     username: root
     password: password
+
+  security:
+    user:
+      name: user
+      password: 123
