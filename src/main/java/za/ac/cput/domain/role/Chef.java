@@ -3,55 +3,63 @@
     entity for Chef
     Student:Hlumelo Mpotulo
     Student Number: 215226348
-    Due Date 10 April 2022
+    Due Date 20 August 2022
  */
 package za.ac.cput.domain.role;
 
-public class Chef {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-private int chefId;
-private int positionId;
+@Entity
+public class Chef implements Serializable {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private int chefId;
+    private int positionId;
 
-private Chef (Builder builder){
-    this.chefId = builder.chefId;
-    this.positionId = builder.postionId;
-}
+    public Chef() {}
+    public Chef(Builder builder){
+        this.positionId = builder.positionId;
+        if(builder.chefId != 0){
+            this.chefId = builder.chefId;
+        }
+    }
+
+    public int getChefId() {
+        return chefId;
+    }
 
     public int getPositionId() {
-    return this.positionId;
-    }
-    public int getChefId(){
-    return this.chefId;
+        return positionId;
     }
 
-    public static class Builder{
-    private int chefId;
-    private int postionId;
+    public static class Builder {
+        private int chefId, positionId;
 
-    public Builder setChefId(int chefId){
-        this.chefId = chefId;
-        return this;
-    }
-    public Builder setPositionId(int positionId){
-        this.postionId = positionId;
-        return this;
-    }
-    public Chef build()
-    {
-        return new Chef(this);
-    }
+        public Builder setPositionId(int positionId){
+            this.positionId = positionId;
+            return this;
+        }
 
-    public Chef.Builder copy (Chef chef) {
-        this.chefId = chef.chefId;
-        this.postionId =chef.positionId;
-        return this;
-}
+        public Builder copy(Chef chef){
+            this.chefId = chef.chefId;
+            this.positionId = chef.positionId;
+            return this;
+        }
+
+        public Chef build(){
+            return new Chef(this);
+        }
+
+    }
 
     @Override
-    public String toString(){
-    String data = "";
-    data += "{ChefId: "+chefId+",";
-    data += "{PositionId:"+postionId+",";
-    return data;
+    public String toString() {
+        return "Chef{" +
+                "chefId=" + chefId +
+                ", positionId=" + positionId +
+                '}';
     }
-}}
+}

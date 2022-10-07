@@ -3,51 +3,62 @@
     entity for Waiter
     Student:Hlumelo Mpotulo
     Student Number: 215226348
-    Due Date 10 April 2022
+    Due Date 07 August 2022
  */
 package za.ac.cput.domain.role;
 
-public class Waiter {
-     private int waiterId;
-     private int positionId;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-     private Waiter(Builder builder){
-         this.waiterId = builder.waiterId;
-         this.positionId = builder.positionId;
-     }
+@Entity
+public class Waiter implements Serializable {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private int waiterId;
+    private int positionId;
 
-     public static class Builder{
-         private int waiterId;
-         private int positionId;
+    public Waiter(){}
+    public Waiter(Builder builder){
+        this.positionId = builder.positionId;
+        if(builder.waiterId != 0){
+            this.waiterId = builder.waiterId;
+        }
+    }
 
-         public Builder setWaiterId(int waiterId){
-             this.waiterId = waiterId;
-             return this;
-         }
+    public int getWaiterId() {
+        return waiterId;
+    }
 
-         public Builder setPositionId (int positionId){
-             this.positionId = positionId;
-             return this;
-         }
-         public Waiter build(){
-             return new Waiter(this);
-         }
-     }
+    public int getPositionId() {
+        return positionId;
+    }
 
-     public int getWaiterId(){
-         return this.waiterId;
-     }
-     public int getPositionId(){
-         return this.positionId;
-     }
-     @Override
-    public String toString(){
-         String data = "";
-         data += "{WaiterId:"+waiterId+",";
-         data += "{PositionId:"+positionId+",";
-         return data;
-     }
+    public static class Builder {
+        private int waiterId, positionId;
 
+        public Builder setPositionId(int positionId){
+            this.positionId = positionId;
+            return this;
+        }
 
+        public Builder copy(Waiter waiter){
+            this.waiterId = waiter.waiterId;
+            this.positionId = waiter.positionId;
+            return this;
+        }
 
+        public Waiter build(){
+            return new Waiter(this);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Waiter{" +
+                "waiterId=" + waiterId +
+                ", positionId=" + positionId +
+                '}';
+    }
 }
