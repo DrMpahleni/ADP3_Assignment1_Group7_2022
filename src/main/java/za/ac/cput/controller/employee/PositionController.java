@@ -1,5 +1,5 @@
 /*
-    PositionController
+    PositionController Class
     Student:Hlumelo Mpotulo
     Student Number: 215226348
     Due Date 26 October 2022
