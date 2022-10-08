@@ -15,7 +15,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import za.ac.cput.domain.restaurant.Order;
-import za.ac.cput.service.restaurant.OrderService;
+import za.ac.cput.service.restaurant.impl.OrderServiceImpl;
 
 import java.util.Arrays;
 
@@ -30,7 +30,7 @@ class OrderControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
     @Autowired private OrderController controller;
-    @Autowired private OrderService service;
+    @Autowired private OrderServiceImpl service;
 
     private Order order;
     private String baseUrl;

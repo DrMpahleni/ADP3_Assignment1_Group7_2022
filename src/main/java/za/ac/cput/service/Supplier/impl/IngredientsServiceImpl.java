@@ -1,4 +1,4 @@
-package za.ac.cput.service.Supplier;
+package za.ac.cput.service.Supplier.impl;
 
 /* IngredientsService.java
    This is Ingredients service class
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.supplier.Ingredients;
 import za.ac.cput.repository.supplier.IngredientsRepository;
+import za.ac.cput.service.Supplier.IIngredientsService;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +18,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class IngredientsService implements IIngredientsService {
-    private static IngredientsService service = null;
+public class IngredientsServiceImpl implements IIngredientsService {
+    private static IngredientsServiceImpl service = null;
 
     @Autowired
     private IngredientsRepository repository;

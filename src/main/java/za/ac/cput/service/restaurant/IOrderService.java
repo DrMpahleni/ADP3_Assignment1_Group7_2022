@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Set;
 
 public interface IOrderService extends IService<Order, Integer> {
-    public Set<Order> getAll();
-    public Order getOrderGiven(String orderItem);
     List<Order> getAll(Integer orderId);
+    void deleteById(Integer orderId);
+
+
 }

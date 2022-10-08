@@ -1,4 +1,4 @@
-package za.ac.cput.service.race;
+package za.ac.cput.service.race.impl;
 
 /*
 EmployeeRaceService.java
@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.repository.race.EmployeeRaceRepository;
+import za.ac.cput.repository.race.RaceRepository;
+import za.ac.cput.service.race.IEmployeeRaceService;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,12 +19,18 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class EmployeeRaceService implements IEmployeeRaceService {
-    private static EmployeeRaceService service = null;
+public class EmployeeRaceServiceImpl implements IEmployeeRaceService {
 
-    @Autowired
     private EmployeeRaceRepository repository;
 
+    public EmployeeRaceServiceImpl(EmployeeRaceRepository repository) {
+
+        this.repository = repository;
+    }
+
+    public EmployeeRaceServiceImpl() {
+
+    }
 
     @Override
     public EmployeeRace create(EmployeeRace employeeRace) {
@@ -32,7 +40,7 @@ public class EmployeeRaceService implements IEmployeeRaceService {
 
     @Override
     public Optional<EmployeeRace> read(Integer raceId) {
-        return Optional.ofNullable(this.repository.findById(raceId).orElse(null));
+        return repository.findById(raceId);
     }
 
     @Override
@@ -49,27 +57,16 @@ public class EmployeeRaceService implements IEmployeeRaceService {
     }
 
     @Override
-    public Set<EmployeeRace> getAll() {
-
-        return this.repository.findAll().stream().collect(Collectors.toSet());
-    }
-
-    @Override
-    public EmployeeRace getEmployeeRaceGiven(String raceName) {
-        EmployeeRace e = null;
-        Set<EmployeeRace> employeeRaces = getAll();
-        for (EmployeeRace employeeRace : employeeRaces) {
-            if (employeeRace.getRaceName().equals(raceName)) {
-                e = employeeRace;
-                break;
-            }
-        }
-        return e;
-    }
-
-    @Override
     public List<EmployeeRace> getAll(Integer raceId) {
+
         return repository.findAll();
+    }
+
+    @Override
+    public void deleteById(Integer raceId) {
+        Optional<EmployeeRace> employeeRace = read(raceId);
+        if (employeeRace.isPresent()) delete(employeeRace.get());
+
     }
 }
 

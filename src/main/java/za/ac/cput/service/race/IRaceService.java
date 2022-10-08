@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Set;
 
 public interface IRaceService extends IService<Race, Integer> {
-    public Set<Race> getAll();
-    public Race getEmployeeRaceGiven(String name);
+    void deleteById(Integer id);
     List<Race> getAll(Integer id);
 }

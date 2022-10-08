@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.race.Race;
+import za.ac.cput.service.race.impl.RaceServiceImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +18,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class RaceServiceTest {
+class RaceServiceImplTest {
 
     private final Race race = new Race.Builder()
             .setId(89)
@@ -25,7 +26,7 @@ class RaceServiceTest {
             .build();
 
     @Autowired
-    private RaceService service;
+    private RaceServiceImpl service;
 
     @Test
     void create() {

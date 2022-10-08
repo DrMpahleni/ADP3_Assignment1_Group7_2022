@@ -15,7 +15,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import za.ac.cput.domain.supplier.Ingredients;
-import za.ac.cput.service.Supplier.IngredientsService;
+import za.ac.cput.service.Supplier.impl.IngredientsServiceImpl;
 
 
 import java.util.Arrays;
@@ -31,7 +31,7 @@ class IngredientsControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
     @Autowired private IngredientsController controller;
-    @Autowired private IngredientsService service;
+    @Autowired private IngredientsServiceImpl service;
 
     private Ingredients ingredients;
     private String baseUrl;
