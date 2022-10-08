@@ -7,13 +7,14 @@ package za.ac.cput.service.Supplier;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.domain.supplier.Ingredients;
+import za.ac.cput.service.Supplier.impl.IngredientsServiceImpl;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IngredientsServiceTest {
+class IngredientsServiceImplTest {
 
     private final Ingredients ingredients = new Ingredients.Builder()
             .setIngredientName("Isinkwa")
@@ -22,7 +23,7 @@ class IngredientsServiceTest {
             .build();
 
     @Autowired
-    private IngredientsService service;
+    private IngredientsServiceImpl service;
 
     @Test
     void create() {

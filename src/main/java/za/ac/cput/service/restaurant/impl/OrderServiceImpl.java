@@ -1,4 +1,4 @@
-package za.ac.cput.service.restaurant;
+package za.ac.cput.service.restaurant.impl;
 
 /* OrderService.java
    This is Order service interface
@@ -9,20 +9,29 @@ package za.ac.cput.service.restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.restaurant.Order;
+import za.ac.cput.repository.race.EmployeeRaceRepository;
 import za.ac.cput.repository.restaurant.OrderRepository;
+import za.ac.cput.service.restaurant.IOrderService;
 
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class OrderService implements IOrderService {
-    private static OrderService service = null;
+public class OrderServiceImpl implements IOrderService {
 
-    @Autowired
     private OrderRepository repository;
 
+    public OrderServiceImpl(OrderRepository repository) {
+
+        this.repository = repository;
+    }
+
+    public OrderServiceImpl() {
+
+    }
     @Override
     public Order create(Order order) {
 
@@ -31,7 +40,7 @@ public class OrderService implements IOrderService {
 
     @Override
     public Optional<Order> read(Integer orderId) {
-        return Optional.ofNullable(this.repository.findById(orderId).orElse(null));
+        return repository.findById(orderId);
     }
 
     @Override
@@ -47,23 +56,17 @@ public class OrderService implements IOrderService {
 
     }
 
-    @Override
-    public Set<Order> getAll() {
 
-        return this.repository.findAll().stream().collect(Collectors.toSet());
+    @Override
+    public List<Order> getAll(Integer orderId) {
+        return repository.findAll();
     }
 
     @Override
-    public Order getOrderGiven(String orderItem) {
-        Order o = null;
-        Set<Order> orders = getAll();
-        for (Order order : orders) {
-            if (order.getOrderItem().equals(orderItem)) {
-                o = order;
-                break;
-            }
-        }
-        return o;
+    public void deleteById(Integer orderId) {
+        Optional<Order> order = read(orderId);
+        if (order.isPresent()) delete(order.get());
+
     }
 }
 

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.restaurant.Order;
+import za.ac.cput.service.restaurant.impl.OrderServiceImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +18,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class OrderServiceTest {
+class OrderServiceImplTest {
 
     private final Order order = new Order.Builder()
             .setOrderId(236)
@@ -27,7 +28,7 @@ class OrderServiceTest {
             .build();
 
     @Autowired
-    private OrderService service;
+    private OrderServiceImpl service;
 
     @Test
     void create() {

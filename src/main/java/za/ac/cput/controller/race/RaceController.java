@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.race.Race;
 import za.ac.cput.factory.race.RaceFactory;
-import za.ac.cput.service.race.RaceService;
+import za.ac.cput.service.race.impl.RaceServiceImpl;
 
 import java.util.Optional;
 import java.util.Set;
@@ -18,32 +18,28 @@ import java.util.Set;
 public class RaceController {
 
     @Autowired
-    private RaceService raceService;
+    private RaceServiceImpl raceServiceImpl;
 
     @PostMapping("/create")
     public Race create(@RequestBody Race race) {
         Race newRace = RaceFactory.createRace(race.getName());
 
-        return raceService.create(newRace);
+        return raceServiceImpl.create(newRace);
     }
     @GetMapping("/read{id}")
     public Optional<Race> read(@PathVariable Integer id ) {
-        return raceService.read(id);
+        return raceServiceImpl.read(id);
     }
 
     @PostMapping("/update")
     public Race update(@RequestBody Race race) {
-        return raceService.update(race);
+        return raceServiceImpl.update(race);
     }
     @DeleteMapping("delete/{raceId}")
     public void delete(@PathVariable String race){
         return;
     }
 
-    @GetMapping("/getAll")
-    public Set<Race> getAll() {
-        return raceService.getAll();
-    }
 
 }
 

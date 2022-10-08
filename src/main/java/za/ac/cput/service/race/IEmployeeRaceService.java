@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Set;
 
 public interface IEmployeeRaceService extends IService<EmployeeRace, Integer> {
-    public Set<EmployeeRace> getAll();
-    public EmployeeRace getEmployeeRaceGiven(String raceName);
-
     List<EmployeeRace> getAll(Integer raceId);
+    void deleteById(Integer raceId);
+
+
 }
 

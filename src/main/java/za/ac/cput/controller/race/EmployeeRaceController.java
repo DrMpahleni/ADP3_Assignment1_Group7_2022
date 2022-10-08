@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.factory.race.EmployeeRaceFactory;
-import za.ac.cput.service.race.EmployeeRaceService;
+import za.ac.cput.service.race.impl.EmployeeRaceServiceImpl;
 
 import java.util.Optional;
 import java.util.Set;
@@ -20,22 +20,22 @@ import java.util.Set;
 
 public class EmployeeRaceController {
     @Autowired
-    private EmployeeRaceService employeeRaceService;
+    private EmployeeRaceServiceImpl employeeRaceServiceImpl;
 
     @PostMapping("/create")
      public EmployeeRace create(@RequestBody EmployeeRace employeeRace) {
         EmployeeRace newEmployeeRace = EmployeeRaceFactory.createEmployeeRace(employeeRace.getRaceName());
 
-        return employeeRaceService.create(newEmployeeRace);
+        return employeeRaceServiceImpl.create(newEmployeeRace);
     }
     @GetMapping("/read{id}")
     public Optional<EmployeeRace> read(@PathVariable Integer raceId ) {
-        return employeeRaceService.read(raceId);
+        return employeeRaceServiceImpl.read(raceId);
     }
 
     @PostMapping("/update")
     public EmployeeRace update(@RequestBody EmployeeRace employeeRace) {
-        return employeeRaceService.update(employeeRace);
+        return employeeRaceServiceImpl.update(employeeRace);
     }
     @DeleteMapping("delete/{raceId}")
     public void delete(@PathVariable String employeeRace){
@@ -44,7 +44,7 @@ public class EmployeeRaceController {
 
     @GetMapping("/getAll")
     public Set<EmployeeRace> getAll() {
-        return employeeRaceService.getAll();
+        return employeeRaceServiceImpl.getAll();
     }
 
 }
