@@ -3,7 +3,7 @@
     Test for Chef
     Student:Hlumelo Mpotulo
     Student Number: 215226348
-    Due Date 10 April 2022
+    Due Date 26 October 2022
  */
 package za.ac.cput.domain;
 
@@ -15,7 +15,7 @@ class ChefTest {
    public void AddChefTest()
    {
        Chef chef = new Chef.Builder()
-                           .setChefId(7658)
+                           //.setChefId(7658)
                            .setPositionId(5500)
                            .build();
        System.out.println(chef);
