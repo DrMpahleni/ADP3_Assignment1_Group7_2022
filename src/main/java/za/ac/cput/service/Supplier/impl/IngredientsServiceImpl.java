@@ -44,31 +44,22 @@ public class IngredientsServiceImpl implements IIngredientsService {
 
     @Override
     public void delete(Ingredients ingredients) {
+        repository.delete(ingredients);
 
-    }
-
-    @Override
-    public Set<Ingredients> getAll() {
-        return this.repository.findAll().stream().collect(Collectors.toSet());
-    }
-
-    @Override
-    public Ingredients getIngredientsGiven(String ingredientName) {
-        Ingredients i = null;
-        Set<Ingredients> ingredient = getAll();
-        for (Ingredients ingredients  : ingredient) {
-            if (ingredients.getIngredientName().equals(ingredientName)) {
-                i = ingredients;
-                break;
-            }
-        }
-        return i;
     }
 
     @Override
     public List<Ingredients> getAll(String ingredientName) {
 
         return repository.findAll();
+    }
+
+    @Override
+    public void deleteById(String ingredientName) {
+        Optional<Ingredients> ingredients = read(ingredientName);
+        if (ingredients.isPresent()) delete(ingredients.get());
+
+
     }
 }
 
