@@ -16,7 +16,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import za.ac.cput.domain.race.Race;
-import za.ac.cput.service.race.RaceService;
+import za.ac.cput.service.race.impl.RaceServiceImpl;
 
 
 import java.util.Arrays;
@@ -31,7 +31,7 @@ class RaceControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
     @Autowired private RaceController controller;
-    @Autowired private RaceService service;
+    @Autowired private RaceServiceImpl service;
 
     private Race race;
     private String baseUrl;

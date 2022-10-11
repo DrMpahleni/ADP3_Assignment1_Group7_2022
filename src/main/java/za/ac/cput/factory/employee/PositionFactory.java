@@ -1,25 +1,21 @@
 /*
-    Chef.java
-    Factory for Chef
+
+    Factory for Position
     Student:Hlumelo Mpotulo
     Student Number: 215226348
-    Due Date 10 April 2022
+    Due Date 25 October 2022
  */
 package za.ac.cput.factory.employee;
 
 import za.ac.cput.domain.employee.Position;
+import za.ac.cput.util.genericHelper;
 
 public class PositionFactory {
-    public static Position createPosition(
-            int positionId,
-            int jobId,
-            String positionName,
-            String positionDescription
-    ){
-        return new Position.Builder().setPositionId(positionId)
-                                     .setJobId(jobId)
-                                     .setPositionName(positionName)
-                                     .setPositionDescription(positionDescription)
-                                     .build();
+    public static Position createPosition(String positionName, String positionDescription, int jobId){
+        if(genericHelper.isValid(positionName) && genericHelper.isValid(positionDescription) && genericHelper.isValid(jobId)){
+            return new Position.Builder().setPositionName(positionName).setPositionDescription(positionDescription)
+                    .setJobId(jobId).build();
+        }
+        return null;
     }
 }

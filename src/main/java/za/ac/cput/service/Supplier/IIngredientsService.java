@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Set;
 
 public interface IIngredientsService extends IService<Ingredients, String> {
-    public Set<Ingredients> getAll();
-    public Ingredients getIngredientsGiven(String ingredientName);
-
     List<Ingredients> getAll(String ingredientName);
+    void deleteById(String ingredientName);
+
+
 }

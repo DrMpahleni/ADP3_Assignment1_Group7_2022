@@ -16,5 +16,11 @@ public class genericHelper {
     public static boolean isNullOrEmpty(String s) {
         return (s == null || s.equals("") || s.isEmpty() || s.equalsIgnoreCase("null"));
     }
+    public static boolean isValid(String s){
+        return s != null && s.trim() != "";
+    }
+    public static boolean isValid(int s){
+        return s > 0;
+    }
 
 }
