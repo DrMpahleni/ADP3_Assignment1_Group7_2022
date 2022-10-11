@@ -8,42 +8,60 @@
 package za.ac.cput.repository.payment;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Payment;
-import za.ac.cput.factory.paymentFactory;
+import za.ac.cput.domain.restaurant.Payment;
+import za.ac.cput.factory.restaurant.paymentFactory;
+import za.ac.cput.repository.restaurant.PaymentRepository;
+
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class paymentRepositoryTest {
 
-    private static paymentRepository repository = paymentRepository.getRepository();
-    private static Payment payment = new paymentFactory().createPayment( "01", "01", "Cash", 200);
+    private final Payment payment1 = new Payment.Builder()
+            .setOrderId("001")
+            .setCustomerId("001")
+            .setPaymentId("001")
+            .setAmount(200)
+            .setPaymentType("card")
+            .build();
+
+    private static PaymentRepository repository;
+    //private static Payment payment = new paymentFactory().createPayment( "01", "01", "Cash", 200);
 
     @Test
     void create() {
-        Payment created = repository.create(payment);
-        assertEquals(payment.getPaymentId(),created.getPaymentId());
-        System.out.println("Create: " + created);
+        Payment saved = repository.save(payment1);
+        String output = String.valueOf(saved);
+        assertNotNull(saved);
+        assertSame(saved, output);
     }
 
     @Test
     void read() {
-        Payment read = repository.read(payment.getPaymentId());
-        assertNotNull(read);
-        System.out.println("Read: " + read);
+        Payment saved = repository.save(payment1);
+        Optional<Payment> read = repository.findById(saved.getPaymentId());
+        String output = String.valueOf(read.get());
+        assertAll(
+                () -> assertTrue(read.isPresent()),
+                () -> assertSame(saved, output)
+        );
     }
 
     @Test
     void update() {
-        Payment updated = new Payment.Builder().copy(payment).setAmount(250).build();
-        assertNotNull(repository.update(updated));
+        Payment updated = new Payment.Builder().copy(payment1).setAmount(250).build();
+        assertNotNull(repository.save(updated));
         System.out.println("Update: " + updated);
     }
 
     @Test
     void delete() {
-        boolean deleted = repository.delete(payment.getPaymentId());
-        assertNotNull(deleted);
-        System.out.println("Delete: " + deleted);
+        Payment saved = repository.save(payment1);
+        List<Payment> getAll = repository.findAll();
+        repository.delete(saved);
+        assertEquals(0, getAll.size());
     }
 
     @Test
