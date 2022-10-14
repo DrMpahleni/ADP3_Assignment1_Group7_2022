@@ -1,51 +1,44 @@
-package za.ac.cput.service.contactType.Impl;
 
+package za.ac.cput.service.contactType.Impl;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.contact.ContactType;
-import za.ac.cput.repository.contactType.ContactTypeRepository;
+import za.ac.cput.repository.contactType.IContactTypeRepository;
 import za.ac.cput.service.contactType.IContactTypeService;
-
 import java.util.Optional;
 import java.util.Set;
 
 @Service
 public class ContactTypeServiceImpl implements IContactTypeService {
-    private static ContactTypeServiceImpl contactTypeService = null;
-    private ContactTypeRepository contactTypeRepository;
-    public ContactTypeServiceImpl(){
-        this.contactTypeRepository = ContactTypeRepository.getRepository();
+    private IContactTypeRepository contactTypeRepository;
+
+    public ContactTypeServiceImpl(IContactTypeRepository contactTypeRepository) {
+        this.contactTypeRepository = contactTypeRepository;
     }
 
-    public static ContactTypeServiceImpl getContactTypeService(){
-        if(contactTypeService == null){
-            contactTypeService = new ContactTypeServiceImpl();
-        }
-        return contactTypeService;
+    public ContactTypeServiceImpl(){
     }
 
     @Override
     public ContactType create(ContactType contactType) {
-        return this.contactTypeRepository.create(contactType);
+        return contactTypeRepository.save(contactType);
     }
-
     @Override
     public Optional<ContactType> read(String Id) {
-        return Optional.ofNullable(this.contactTypeRepository.read(Id));
+        return contactTypeRepository.findById(Id);
     }
-
     @Override
     public ContactType update(ContactType contactType) {
-        return this.contactTypeRepository.update(contactType);
+        return contactTypeRepository.save(contactType);
     }
 
     @Override
     public void delete(ContactType contactType) {
-    return;
+     contactTypeRepository.delete(contactType);
     }
 
     @Override
     public Set<ContactType> getAll() {
-        return this.contactTypeRepository.getAll();
+        return contactTypeRepository.getAll();
     }
 
     @Override

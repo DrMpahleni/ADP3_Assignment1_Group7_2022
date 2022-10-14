@@ -4,12 +4,12 @@ package za.ac.cput.repository.contactType;
  Author: Vuyisa Nkangana(218192215)
  Due Date: 10 April 2022
   */
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.contact.ContactType;
-
-import za.ac.cput.repository.IRepository;
-
 import java.util.Set;
 
-public interface IContactTypeRepository extends IRepository<ContactType, String>  {
+@Repository
+public interface IContactTypeRepository extends JpaRepository<ContactType, String> {
     public Set<ContactType> getAll();
 }

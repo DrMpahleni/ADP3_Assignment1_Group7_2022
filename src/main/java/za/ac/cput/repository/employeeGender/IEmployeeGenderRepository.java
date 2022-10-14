@@ -5,11 +5,11 @@ package za.ac.cput.repository.employeeGender;
         Due Date: 10 April 2022
         */
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.gender.EmployeeGender;
-import za.ac.cput.repository.IRepository;
-
 import java.util.Set;
-
-public interface IEmployeeGenderRepository extends IRepository<EmployeeGender, String> {
+@Repository
+public interface IEmployeeGenderRepository extends JpaRepository<EmployeeGender, String> {
     public Set<EmployeeGender> getAll();
 }
