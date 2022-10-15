@@ -3,7 +3,7 @@ package za.ac.cput.repository.contactType;
 /* ContactTypeRepositoryTest.java
  This is a Contact Type Repository Test
  Author: Vuyisa Nkangana(218192215)
- Due Date: 10 April 2022
+ Due Date: October 2022
   */
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

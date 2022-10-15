@@ -3,19 +3,14 @@ package za.ac.cput.repository.employeeGender;
 /* EmployeeGenderRepositoryTest.java
  This is a Employee Gender Repository Test
  Author: Vuyisa Nkangana(218192215)
- Due Date: 10 April 2022
+ Due Date: October 2022
   */
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.domain.gender.EmployeeGender;
-import za.ac.cput.factory.contact.EmployeeContactFactory;
 import za.ac.cput.factory.gender.EmployeeGenderFactory;
-import za.ac.cput.repository.employeeContact.IEmployeeContactRepository;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeGenderRepositoryTest {

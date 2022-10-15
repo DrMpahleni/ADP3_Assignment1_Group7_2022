@@ -2,16 +2,14 @@ package za.ac.cput.repository.employeeContact;
 /* EmployeeContactRepositoryTest.java
  This is a Employee Contact Repository Test
  Author: Vuyisa Nkangana(218192215)
- Due Date: 10 April 2022
+ Due Date: October 2022
   */
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.factory.contact.EmployeeContactFactory;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeContactRepositoryTest {
