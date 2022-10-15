@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class Table implements Serializable {
 
     @Id
-    private int tblNum;
+    private String tblNum;
     private int seatAmount;
 
     public Table(){
@@ -32,7 +32,7 @@ public class Table implements Serializable {
 
     }
 
-    public int getTblNum() {
+    public String getTblNum() {
         return tblNum;
     }
 
@@ -40,7 +40,7 @@ public class Table implements Serializable {
         return seatAmount;
     }
 
-    public void setTblNum(int tblNum) {
+    public void setTblNum(String tblNum) {
         this.tblNum = tblNum;
     }
 
@@ -58,10 +58,10 @@ public class Table implements Serializable {
 
     public static class Builder{
 
-        private int tblNum;
+        private String tblNum;
         private int seatAmount;
 
-        public Table.Builder setTblNum(int tblNum){
+        public Table.Builder setTblNum(String tblNum){
             this.tblNum = tblNum;
             return this;
         }

@@ -36,7 +36,7 @@ public class TableRepository {
     }
 
 
-    public Table read(Integer tblNum) {
+    public Table read(String tblNum) {
         Table table = tableDB.stream()
                 .filter(e -> e.getTblNum() == tblNum)
                 .findAny()
@@ -56,7 +56,7 @@ public class TableRepository {
     }
 
 
-    public boolean delete(Integer tblNum) {
+    public boolean delete(String tblNum) {
         Table tableToDelete = read(tblNum);
         if(tableToDelete == null)
             return false;

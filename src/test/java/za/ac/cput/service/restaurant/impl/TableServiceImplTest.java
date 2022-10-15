@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 public class TableServiceImplTest {
 
     private final Table table = new Table.Builder()
-            .setTblNum(45)
+            .setTblNum("45")
             .setSeatAmount(4)
             .build();
 
@@ -56,7 +56,7 @@ public class TableServiceImplTest {
     @Test
     void update() {
         Table saved = service.create(table);
-        Table updated = new Table.Builder().copy(table).setTblNum(43).build();
+        Table updated = new Table.Builder().copy(table).setTblNum("43").build();
         assertNotNull(updated);
         System.out.println(updated);
     }
