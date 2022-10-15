@@ -16,11 +16,12 @@ public class OrderFactory {
             return null;
 
         int orderId = genericHelper.generateIntId();
-        Order order = new Order.Builder().setOrderId(orderId)
+        Order order = new Order.Builder()
+                .setOrderId(orderId)
                 .setOrderItem(orderItem)
                 .setDate(date)
-                .setAmount(amount).
-                        build();
+                .setAmount(amount)
+                .build();
 
         return order;
 
