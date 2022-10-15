@@ -7,48 +7,42 @@ package za.ac.cput.service.employeeContact.Impl;
   */
 
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.contact.ContactType;
 import za.ac.cput.domain.contact.EmployeeContact;
-import za.ac.cput.domain.gender.Gender;
-import za.ac.cput.repository.employeeContact.EmployeeContactRepository;
+import za.ac.cput.repository.contactType.IContactTypeRepository;
+import za.ac.cput.repository.employeeContact.IEmployeeContactRepository;
 import za.ac.cput.service.employeeContact.IEmployeeContactService;
 
 import java.util.Optional;
 import java.util.Set;
 @Service
 public class EmployeeContactServiceImpl implements IEmployeeContactService {
-    private static EmployeeContactServiceImpl employeeContact =null;
-    private EmployeeContactRepository employeeContactRepository;
+    private IEmployeeContactRepository employeeContactRepository;
 
-    public EmployeeContactServiceImpl() {
-        this.employeeContactRepository = EmployeeContactRepository.getRepository();
+    public EmployeeContactServiceImpl(IEmployeeContactRepository employeeContactRepository) {
+        this.employeeContactRepository = employeeContactRepository;
     }
-    public static EmployeeContactServiceImpl getEmployeeContact(){
 
-        if (employeeContact == null) {
-            employeeContact = new EmployeeContactServiceImpl();
-        }
-        return employeeContact;
+    public EmployeeContactServiceImpl(){
     }
 
     @Override
     public EmployeeContact create(EmployeeContact employeeContact) {
-        return this.employeeContactRepository.create(employeeContact);
+        return employeeContactRepository.save(employeeContact);
     }
 
     @Override
     public Optional<EmployeeContact> read(String employeeId) {
-        return Optional.ofNullable(this.employeeContactRepository.read(employeeId));
+        return employeeContactRepository.findById(employeeId);
     }
 
     @Override
     public EmployeeContact update(EmployeeContact employeeContact) {
-        return this.employeeContactRepository.update(employeeContact);
+        return employeeContactRepository.save(employeeContact);
     }
 
     @Override
     public void delete(EmployeeContact employeeContact) {
-    return;
+    employeeContactRepository.delete(employeeContact);
     }
 
     @Override

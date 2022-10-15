@@ -4,13 +4,13 @@ package za.ac.cput.repository.gender;
         Author: Vuyisa Nkangana(218192215)
         Due Date: 10 April 2022
         */
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.gender.Gender;
-
-import za.ac.cput.repository.IRepository;
-
 import java.util.Set;
 
-public interface IGenderRepository extends IRepository<Gender, String> {
+@Repository
+public interface IGenderRepository extends JpaRepository<Gender, String> {
     public Set<Gender>getAll();
 
 }
