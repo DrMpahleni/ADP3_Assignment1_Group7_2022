@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class tableRepositoryTest {
 
     private static TableRepository repository = TableRepository.getRepository();
-    private static Table table = TableFactory.createTable(13, 2);
+    private static Table table = TableFactory.createTable("13", 2);
 
     @Test
     void create() {
@@ -29,7 +29,7 @@ public class tableRepositoryTest {
 
     @Test
     void update() {
-        Table updated = new Table.Builder().copy(table).setTblNum(3).build();
+        Table updated = new Table.Builder().copy(table).setTblNum("3").build();
         assertNotNull(repository.update(updated));
         System.out.println("Update: " + updated);
     }
