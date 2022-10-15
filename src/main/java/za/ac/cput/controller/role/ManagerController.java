@@ -5,12 +5,14 @@ Author: Bongisa Mpahleni (216205999)
 Date: 02 April 2022
 */
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.domain.role.Manager;
 import za.ac.cput.service.role.impl.ManagerServiceImpl;
+import za.ac.cput.domain.role.Manager;
+
 
 import javax.validation.Valid;
 import java.util.List;
