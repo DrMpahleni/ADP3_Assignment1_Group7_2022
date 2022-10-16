@@ -45,6 +45,13 @@ class jobRepositoryTest {
     }
 
     @Test
+    void update() {
+        Job updated = new Job.Builder().copy(job1).setJobName("Waitress").build();
+        assertNotNull(repository.save(updated));
+        System.out.println("Update: " + updated);
+    }
+
+    @Test
     void delete() {
         Job saved = repository.save(job1);
         List<Job> getAll = repository.findAll();
