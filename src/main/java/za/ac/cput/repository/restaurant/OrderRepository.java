@@ -8,6 +8,7 @@ package za.ac.cput.repository.restaurant;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.domain.restaurant.Order;
 
 import java.util.Set;
@@ -15,5 +16,6 @@ import java.util.Set;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer> {
     boolean delete(int orderId);
+    public Set<Order> getAll();
 }
 
