@@ -1,48 +1,62 @@
+/*
+tableRepositoryTest.java
+author: Felecia Zweni
+Date: August 2022
+ */
+
 package za.ac.cput.repository.table;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.domain.restaurant.Table;
-import za.ac.cput.factory.restaurant.TableFactory;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class tableRepositoryTest {
 
-    private static TableRepository repository = TableRepository.getRepository();
-    private static Table table = TableFactory.createTable("13", 2);
+    private final Table table = new Table.Builder()
+            .setTblNum("001")
+            .setSeatAmount(2)
+            .build();
+
+    @Autowired
+    private TableRepository repository;
 
     @Test
-    void create() {
-        Table created = repository.create(table);
-        assertEquals(table.getTblNum(),created.getTblNum());
-        System.out.println("Create: " + created);
+    void save() {
+        Table saved = repository.save(table);
+        assertNotNull(saved);
+        assertSame(saved, table);
     }
 
     @Test
     void read() {
-        Table read = repository.read(table.getTblNum());
-        assertNotNull(read);
-        System.out.println("Read: " + read);
-    }
-
-    @Test
-    void update() {
-        Table updated = new Table.Builder().copy(table).setTblNum("3").build();
-        assertNotNull(repository.update(updated));
-        System.out.println("Update: " + updated);
+        Table saved = repository.save(table);
+       Optional<Table> read = repository.findById(saved.getTblNum());
+        String output = String.valueOf(read.get());
+        assertAll(
+                () -> assertTrue(read.isPresent()),
+                () -> assertSame(table, output)
+        );
     }
 
     @Test
     void delete() {
-        boolean deleted = repository.delete(table.getTblNum());
-        assertNotNull(deleted);
-        System.out.println("Delete: " + deleted);
+        Table saved = repository.save(table);
+        List<Table> getAll = repository.findAll();
+        repository.delete(saved);
+        assertEquals(0, getAll.size());
     }
 
     @Test
     void getAll() {
+        repository.save(table);
+        List <Table> getAll = repository.findAll();
+        assertEquals(1, getAll.size());
         System.out.println("Show all data: ");
         System.out.println(repository.getAll());
     }
