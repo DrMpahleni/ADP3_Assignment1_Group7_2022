@@ -37,7 +37,7 @@ public class TableControllerTest {
     @BeforeEach
     void setUp() {
         table = new Table.Builder()
-                .setTblNum(45)
+                .setTblNum("45")
                 .setSeatAmount(4)
                 .build();
         this.baseUrl = "http://localhost:" + this.port + "restaurant/table";

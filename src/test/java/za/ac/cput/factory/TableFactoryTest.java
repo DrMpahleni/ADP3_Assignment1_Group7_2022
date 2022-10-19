@@ -3,7 +3,8 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Table;
+import za.ac.cput.domain.restaurant.Table;
+import za.ac.cput.factory.restaurant.TableFactory;
 
 
 import java.time.Duration;
@@ -17,7 +18,7 @@ public class TableFactoryTest {
 
     @BeforeEach
     void setUp(){
-        Table table1 = new Table.Builder().setTblNum(12).setSeatAmount(8).build();
+        Table table1 = new Table.Builder().setTblNum("12").setSeatAmount(8).build();
         Table table2  = table1;
     }
 
@@ -25,7 +26,7 @@ public class TableFactoryTest {
     @Test
     public void test(){
 
-        Table table = TableFactory.createTable(12, 8);
+        Table table = TableFactory.createTable("12", 8);
         System.out.println(table.toString());
         assertNotNull(table);
 
