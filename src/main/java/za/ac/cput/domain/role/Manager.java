@@ -16,15 +16,19 @@ public class Manager implements Serializable {
 
     @Id
     private int managerID;
+
     @Column(name = "position ID")
-    @ManyToOne(cascade = CascadeType.ALL)
     private int positionID;
+
     @Column(length = 25,name = "firstName")
     private String fisrtName;
+
     @Column(length = 25,name = "LastName")
     private String lastName;
+
     @Column(length = 10,name = "photoNo")
     private String phoneNo;
+
     @Column(length = 25,name = "emailAddress")
     private String emailAddress;
 
