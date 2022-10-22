@@ -10,6 +10,7 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.domain.employee.Employee;
 import za.ac.cput.domain.gender.EmployeeGender;
 import za.ac.cput.domain.race.EmployeeRace;
@@ -35,7 +36,8 @@ class EmployeeFactoryTest {
 
         EmployeeGender gender = new EmployeeGender.Builder().setGenderId("01").setEmployeeId("0001").build();
         EmployeeRace race = new EmployeeRace.Builder().setRaceId(0004).setRaceName("Coloured").build();
-        Employee employee = EmployeeFactory.createEmployee("Ian", "Louw", gender, race);
+        EmployeeContact contact = new EmployeeContact.Builder().setContact("0715556789").build();
+        Employee employee = EmployeeFactory.createEmployee("Ian", "Louw", gender, race, contact);
         System.out.println(employee.toString());
         assertNotNull(employee);
     }
