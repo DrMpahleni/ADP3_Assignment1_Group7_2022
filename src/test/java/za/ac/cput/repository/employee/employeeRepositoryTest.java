@@ -9,7 +9,13 @@ package za.ac.cput.repository.employee;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.employee.Employee;
+import za.ac.cput.domain.gender.EmployeeGender;
+import za.ac.cput.domain.race.EmployeeRace;
+import za.ac.cput.repository.IRepository;
+import za.ac.cput.repository.employee.EmployeeRepository;
 import za.ac.cput.factory.employee.EmployeeFactory;
 
 import java.util.List;
@@ -17,23 +23,41 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class employeeRepositoryTest {
+
+    private  final EmployeeGender gender1 = new EmployeeGender.Builder()
+            .setGenderId("01")
+            .setEmployeeId("001")
+            .build();
+
+    private final EmployeeRace race1 = new EmployeeRace.Builder()
+            .setRaceId(0004)
+            .setRaceName("Coloured")
+            .build();
 
     private final Employee employee1 = new Employee.Builder()
             .setEmployeeId("001")
             .setFirstName("John")
             .setLastName("Doe")
+            .setEmployeeGender(gender1)
+            .setEmployeeRace(race1)
             .build();
+    private final Employee employee2 = EmployeeFactory.createEmployee("John", "Doe", gender1, race1);
 
     @Autowired private EmployeeRepository repository;
-    private static Employee employee = EmployeeFactory.createEmployee("Bob", "John");
+    //private static Employee employee = EmployeeFactory.createEmployee("Bob", "John");
 
     @Test
     void save() {
-        Employee saved = repository.save(employee1);
+        Employee saved = this.repository.save(this.employee1);
         String output = String.valueOf(saved);
+        assertEquals(saved, this.employee2);
+        /*
         assertNotNull(saved);
+        System.out.println(saved);
         assertSame(saved, output);
+         */
     }
 
     @Test
