@@ -18,7 +18,11 @@ public class Restaurant implements Serializable {
 
     @Id
     private String name;
-    private String address;
+    private String streetAddress;
+    private String suburb;
+    private String city;
+    private String province;
+    private int zipCode;
     private int phone;
 
     public Restaurant() {
@@ -26,7 +30,11 @@ public class Restaurant implements Serializable {
 
     private Restaurant (Builder builder){
         this.name = builder.name;
-        this.address = builder.address;
+        this.streetAddress = builder.streetAddress;
+        this.suburb = builder.suburb;
+        this.city = builder.city;
+        this.province = builder.province;
+        this.zipCode = builder.zipCode;
         this.phone = builder.phone;
     }
 
@@ -34,8 +42,24 @@ public class Restaurant implements Serializable {
         return name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public String getSuburb() {
+        return suburb;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public int getZipCode() {
+        return zipCode;
     }
 
     public int getPhone() {
@@ -46,14 +70,18 @@ public class Restaurant implements Serializable {
     public String toString() {
         return "Restaurant{" +
                 "name='" + name + '\'' +
-                ", address='" + address + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", suburb='" + suburb + '\'' +
+                ", city='" + city + '\'' +
+                ", province='" + province + '\'' +
+                ", zipCode=" + zipCode +
                 ", phone=" + phone +
                 '}';
     }
 
     public static class Builder {
-        private String name, address;
-        private int phone;
+        private String name, streetAddress, suburb, city, province;
+        private int zipCode, phone;
 
         public Builder setName(String name) {
             this.name = name;
@@ -61,8 +89,32 @@ public class Restaurant implements Serializable {
             return this;
         }
 
-        public Builder setAddress(String address) {
-            this.address = address;
+        public Builder setStreetAddress(String streetAddress) {
+            this.streetAddress = streetAddress;
+
+            return this;
+        }
+
+        public Builder setSuburb(String suburb) {
+            this.suburb = suburb;
+
+            return this;
+        }
+
+        public Builder setCity(String city) {
+            this.city = city;
+
+            return this;
+        }
+
+        public Builder setProvince(String province) {
+            this.province = province;
+
+            return this;
+        }
+
+        public Builder setZipCode(int zipCode) {
+            this.zipCode = zipCode;
 
             return this;
         }
@@ -79,7 +131,11 @@ public class Restaurant implements Serializable {
 
         public Builder copy (Restaurant restaurant) {
             this.name = restaurant.name;
-            this.address = restaurant.address;
+            this.streetAddress = restaurant.streetAddress;
+            this.suburb = restaurant.suburb;
+            this.city = restaurant.city;
+            this.province = restaurant.province;
+            this.zipCode = restaurant.zipCode;
             this.phone = restaurant.phone;
 
             return this;

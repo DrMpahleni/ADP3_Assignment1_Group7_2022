@@ -17,7 +17,11 @@ class RestaurantServiceImplTest {
 
     private final Restaurant restaurant = new Restaurant.Builder()
             .setName("Spur")
-            .setAddress(".....")
+            .setStreetAddress(".....")
+            .setSuburb("Muizenberg")
+            .setCity("Cape Town")
+            .setProvince("Western Cape")
+            .setZipCode(5100)
             .setPhone(0215054545)
             .build();
 

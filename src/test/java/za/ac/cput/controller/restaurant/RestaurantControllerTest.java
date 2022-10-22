@@ -30,7 +30,11 @@ class RestaurantControllerTest {
     void setUp() {
         restaurant = new Restaurant.Builder()
                 .setName("Spur")
-                .setAddress("5555 long road")
+                .setStreetAddress("5555 long road")
+                .setSuburb("Muizenberg")
+                .setCity("Ca[e Town")
+                .setProvince("Western Cape")
+                .setZipCode(5100)
                 .setPhone(0215554545)
                 .build();
         this.baseUrl = "http://localhost:" + this.port + "restaurant/";
