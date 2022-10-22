@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.domain.employee.Employee;
+import za.ac.cput.domain.employee.Position;
 import za.ac.cput.domain.gender.EmployeeGender;
 import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.service.employee.EmployeeService;
@@ -31,6 +32,10 @@ class EmployeeServiceImplTest {
             .setContact("0715556789")
             .build();
 
+    private final Position position1 = new Position.Builder()
+            .setPositionName("Manager")
+            .build();
+
     private final Employee employee = new Employee.Builder()
             .setEmployeeId("001")
             .setLastName("John")
@@ -38,6 +43,7 @@ class EmployeeServiceImplTest {
             .setEmployeeGender(gender1)
             .setEmployeeRace(race1)
             .setEmployeeContact(contact1)
+            .setPosition(position1)
             .build();
 
     @Autowired private EmployeeService service;
