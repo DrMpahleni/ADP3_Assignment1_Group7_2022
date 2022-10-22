@@ -11,7 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.domain.employee.Employee;
+import za.ac.cput.domain.employee.Position;
 import za.ac.cput.domain.gender.EmployeeGender;
 import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.repository.IRepository;
@@ -36,14 +38,24 @@ class employeeRepositoryTest {
             .setRaceName("Coloured")
             .build();
 
+    private final EmployeeContact contact1 = new EmployeeContact.Builder()
+            .setContact("0715556789")
+            .build();
+
+    private final Position position1 = new Position.Builder()
+            .setPositionName("Manager")
+            .build();
+
     private final Employee employee1 = new Employee.Builder()
             .setEmployeeId("001")
             .setFirstName("John")
             .setLastName("Doe")
             .setEmployeeGender(gender1)
             .setEmployeeRace(race1)
+            .setEmployeeContact(contact1)
+            .setPosition(position1)
             .build();
-    private final Employee employee2 = EmployeeFactory.createEmployee("John", "Doe", gender1, race1);
+    private final Employee employee2 = EmployeeFactory.createEmployee("John", "Doe", gender1, race1, contact1, position1);
 
     @Autowired private EmployeeRepository repository;
     //private static Employee employee = EmployeeFactory.createEmployee("Bob", "John");
