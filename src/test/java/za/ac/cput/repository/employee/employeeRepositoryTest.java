@@ -28,34 +28,17 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class employeeRepositoryTest {
 
-    private  final EmployeeGender gender1 = new EmployeeGender.Builder()
-            .setGenderId("01")
-            .setEmployeeId("001")
-            .build();
-
-    private final EmployeeRace race1 = new EmployeeRace.Builder()
-            .setRaceId(0004)
-            .setRaceName("Coloured")
-            .build();
-
-    private final EmployeeContact contact1 = new EmployeeContact.Builder()
-            .setContact("0715556789")
-            .build();
-
-    private final Position position1 = new Position.Builder()
-            .setPositionName("Manager")
-            .build();
-
     private final Employee employee1 = new Employee.Builder()
             .setEmployeeId("001")
             .setFirstName("John")
             .setLastName("Doe")
-            .setEmployeeGender(gender1)
-            .setEmployeeRace(race1)
-            .setEmployeeContact(contact1)
-            .setPosition(position1)
+            .setEmployeeGender("Male")
+            .setEmployeeRace("Coloured")
+            .setEmployeePosition("Waiter")
+            .setEmployeeContact("0215556884")
+            .setEmployeeEmail("john@gmail.com")
             .build();
-    private final Employee employee2 = EmployeeFactory.createEmployee("John", "Doe", gender1, race1, contact1, position1);
+    //private final Employee employee2 = EmployeeFactory.createEmployee("John", "Doe", gender1, race1, contact1, position1);
 
     @Autowired private EmployeeRepository repository;
     //private static Employee employee = EmployeeFactory.createEmployee("Bob", "John");
@@ -64,7 +47,7 @@ class employeeRepositoryTest {
     void save() {
         Employee saved = this.repository.save(this.employee1);
         String output = String.valueOf(saved);
-        assertEquals(saved, this.employee2);
+        assertEquals(saved, this.employee1);
         /*
         assertNotNull(saved);
         System.out.println(saved);

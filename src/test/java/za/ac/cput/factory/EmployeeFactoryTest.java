@@ -34,12 +34,7 @@ class EmployeeFactoryTest {
 
     @Test
     public void test() {
-
-        EmployeeGender gender = new EmployeeGender.Builder().setGenderId("01").setEmployeeId("0001").build();
-        EmployeeRace race = new EmployeeRace.Builder().setRaceId(0004).setRaceName("Coloured").build();
-        EmployeeContact contact = new EmployeeContact.Builder().setContact("0715556789").build();
-        Position position1 = new Position.Builder().setPositionName("Manager").build();
-        Employee employee = EmployeeFactory.createEmployee("Ian", "Louw", gender, race, contact, position1);
+        Employee employee = EmployeeFactory.createEmployee("Ian", "Louw", "Male", "Coloured", "Waiter", "0215556884", "ian@gmail.com");
         System.out.println(employee.toString());
         assertNotNull(employee);
     }

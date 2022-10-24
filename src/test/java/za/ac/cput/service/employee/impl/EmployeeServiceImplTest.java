@@ -18,32 +18,15 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class EmployeeServiceImplTest {
 
-    private  final EmployeeGender gender1 = new EmployeeGender.Builder()
-            .setGenderId("01")
-            .setEmployeeId("001")
-            .build();
-
-    private final EmployeeRace race1 = new EmployeeRace.Builder()
-            .setRaceId(0004)
-            .setRaceName("Coloured")
-            .build();
-
-    private final EmployeeContact contact1 = new EmployeeContact.Builder()
-            .setContact("0715556789")
-            .build();
-
-    private final Position position1 = new Position.Builder()
-            .setPositionName("Manager")
-            .build();
-
     private final Employee employee = new Employee.Builder()
             .setEmployeeId("001")
             .setLastName("John")
             .setLastName("Doe")
-            .setEmployeeGender(gender1)
-            .setEmployeeRace(race1)
-            .setEmployeeContact(contact1)
-            .setPosition(position1)
+            .setEmployeeGender("Male")
+            .setEmployeeRace("Coloured")
+            .setEmployeePosition("Waiter")
+            .setEmployeeContact("0215556884")
+            .setEmployeeEmail("john@gmail.com")
             .build();
 
     @Autowired private EmployeeService service;
