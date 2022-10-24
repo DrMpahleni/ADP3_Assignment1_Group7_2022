@@ -1,7 +1,9 @@
 package za.ac.cput.controller.contactType;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -9,6 +11,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import za.ac.cput.domain.contact.ContactType;
+import za.ac.cput.factory.contact.ContactTypeFactory;
 import za.ac.cput.service.contactType.Impl.ContactTypeServiceImpl;
 
 
@@ -17,6 +20,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ContactTypeControllerTest {
     @LocalServerPort
     private int port;
@@ -30,12 +34,9 @@ class ContactTypeControllerTest {
 
     @BeforeEach
     void setUp() {
-       contactType = new ContactType.Builder()
-               .setId("Email22")
-               .setName("Sibu")
-               .build();
-
-
+       assertNotNull(controller);
+       this.contactType = ContactTypeFactory
+               .createContactType("test-id", "test-name");
         this.baseUrl = "http:localhost:" + this.port + "restaurant/contactType/";
     }
 
