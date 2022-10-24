@@ -12,13 +12,17 @@ import za.ac.cput.util.genericHelper;
 
 public class RestaurantFactory {
 
-    public static Restaurant createRestaurant(String name, String address, int phone) {
+    public static Restaurant createRestaurant(String name, String streetAddress, String suburb, String city, String province, int zipCode, int phone) {
 
-        if (genericHelper.isNullOrEmpty(name) || genericHelper.isNullOrEmpty(address))
+        if (genericHelper.isNullOrEmpty(name) || genericHelper.isNullOrEmpty(streetAddress))
             return null;
 
         Restaurant restaurant = new Restaurant.Builder().setName(name).
-                                setAddress(address).
+                                setStreetAddress(streetAddress).
+                                setSuburb(suburb).
+                                setCity(city).
+                                setProvince(province).
+                                setZipCode(zipCode).
                                 setPhone(phone).
                                 build();
 

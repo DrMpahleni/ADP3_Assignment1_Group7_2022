@@ -31,7 +31,7 @@ class RestaurantFactoryTest {
     @Test
     public void test() {
 
-        Restaurant restaurant = RestaurantFactory.createRestaurant("Restaurant ABC", "411 Long Street", 021333666);
+        Restaurant restaurant = RestaurantFactory.createRestaurant("Restaurant ABC", "411 Long Street", "Town", "Cape Town", "Western Cape", 5000, 021555);
         System.out.println(restaurant.toString());
         assertNotNull(restaurant);
     }

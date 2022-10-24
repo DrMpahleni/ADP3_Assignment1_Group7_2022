@@ -20,7 +20,11 @@ class restaurantRepositoryTest {
 
     Restaurant restaurant1 = new Restaurant.Builder()
             .setName("Spur")
-            .setAddress("5656 Muizenberg")
+            .setStreetAddress("5656 big Street")
+            .setSuburb("Muizenberg")
+            .setCity("Cape Town")
+            .setProvince("Western Cape")
+            .setZipCode(5100)
             .setPhone(0216667775)
             .build();
     @Autowired private RestaurantRepository repository;

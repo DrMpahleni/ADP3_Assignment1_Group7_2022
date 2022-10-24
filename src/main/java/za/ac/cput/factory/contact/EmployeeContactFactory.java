@@ -5,18 +5,20 @@ package za.ac.cput.factory.contact;
  Due Date: 10 April 2022
   */
 
+import org.hibernate.internal.util.StringHelper;
 import za.ac.cput.domain.contact.EmployeeContact;
+import za.ac.cput.domain.gender.Gender;
 import za.ac.cput.util.genericHelper;
 
 public class EmployeeContactFactory {
     public static EmployeeContact createEmployeeContact(String employeeId, String contactTypeId, String contact){
-
-        String employeeID = genericHelper.generateId();
-    EmployeeContact employeeContact = new EmployeeContact.Builder().setEmployeeID(employeeID)
-            .setContactTypeId(contactTypeId)
-            .setContact(contact)
-            .build();
-    return employeeContact;
+        String contactTypeID = genericHelper.generateId();
+        EmployeeContact employeeContact = new EmployeeContact.Builder()
+                .setContactTypeId(contactTypeId)
+                .setEmployeeID(employeeId)
+                .setContact(contact)
+                .build();
+        return employeeContact;
 
 }
 

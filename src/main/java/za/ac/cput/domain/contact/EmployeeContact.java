@@ -1,18 +1,26 @@
 package za.ac.cput.domain.contact;
 
+import za.ac.cput.domain.gender.Gender;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.Objects;
+
 /* EmployeeContact.java
  This is an Employee Contact Class
  Author: Vuyisa Nkangana(218192215)
  Due Date: 10 April 2022
   */
-public class EmployeeContact {
-    private String  employeeId;
-    private String contactTypeId;
-    private String contact;
+@Entity
+@Table(name = "Employee")
+public class EmployeeContact implements Serializable {
+    @Id
+    private String employeeId, contactTypeId, contact;
+public EmployeeContact(){
 
-    public EmployeeContact(){
-
-    }
+}
     private EmployeeContact (Builder builder){
     this.employeeId = builder.employeedId;
     this.contactTypeId = builder.contactTypeId;
@@ -39,6 +47,17 @@ public class EmployeeContact {
                 ", contact='" + contact + '\'' +
                 '}';
     }
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass())return false;
+        EmployeeContact employeeContact = (EmployeeContact) o;
+        return contactTypeId.equals(employeeContact.contactTypeId);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId, contactTypeId,contact);
+    }
     public static class Builder{
         private String employeedId;
         private String contactTypeId;
@@ -60,15 +79,14 @@ public class EmployeeContact {
             return this;
         }
 
-        public EmployeeContact build(){
-            return new EmployeeContact(this);
-        }
-
         public Builder copy(EmployeeContact employeeContact){
             this.employeedId = employeeContact.employeeId;
             this.contactTypeId = employeeContact.getContactTypeId();
             this.contact = employeeContact.contact;
             return this;
+        }
+        public EmployeeContact build(){
+            return new EmployeeContact(this);
         }
 
     }
