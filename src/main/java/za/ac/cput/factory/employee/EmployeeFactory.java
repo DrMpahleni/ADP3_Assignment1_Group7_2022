@@ -16,7 +16,7 @@ import za.ac.cput.util.genericHelper;
 
 public class EmployeeFactory {
 
-    public static Employee createEmployee(String firstName, String lastName, EmployeeGender employeeGender, EmployeeRace employeeRace, EmployeeContact employeeContact, Position position) {
+    public static Employee createEmployee(String firstName, String lastName, String employeeGender, String employeeRace, String employeePosition, String employeeContact, String employeeEmail) {
 
         if (genericHelper.isNullOrEmpty(firstName) || genericHelper.isNullOrEmpty(lastName))
             return null;
@@ -28,8 +28,9 @@ public class EmployeeFactory {
                                         setLastName(lastName).
                                         setEmployeeGender(employeeGender).
                                         setEmployeeRace(employeeRace).
+                                        setEmployeePosition(employeePosition).
                                         setEmployeeContact(employeeContact).
-                                        setPosition(position).
+                                        setEmployeeEmail(employeeEmail).
                                         build();
 
                                         return employee;

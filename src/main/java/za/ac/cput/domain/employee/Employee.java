@@ -22,14 +22,11 @@ public class Employee implements Serializable {
     private String employeeId;
     private String firstName;
     private String lastName;
-    @ManyToOne(targetEntity = EmployeeGender.class, cascade = CascadeType.ALL)
-    private EmployeeGender employeeGender;
-    @ManyToOne(targetEntity = EmployeeRace.class, cascade = CascadeType.ALL)
-    private EmployeeRace employeeRace;
-    @ManyToOne(targetEntity = EmployeeContact.class, cascade = CascadeType.ALL)
-    private EmployeeContact employeeContact;
-    @ManyToOne(targetEntity = Position.class, cascade = CascadeType.ALL)
-    private Position position;
+    private String employeeGender;
+    private String employeeRace;
+    private String employeePosition;
+    private String employeeContact;
+    private String employeeEmail;
 
     public Employee() {
     }
@@ -41,8 +38,9 @@ public class Employee implements Serializable {
         this.lastName = builder.lastName;
         this.employeeGender = builder.employeeGender;
         this.employeeRace = builder.employeeRace;
+        this.employeePosition = builder.employeePosition;
         this.employeeContact = builder.employeeContact;
-        this.position = builder.position;
+        this.employeeEmail = builder.employeeEmail;
     }
 
     public String getEmployeeId() {
@@ -60,44 +58,43 @@ public class Employee implements Serializable {
         return lastName;
     }
 
-    public EmployeeGender getEmployeeGender() {
-
+    public String getEmployeeGender() {
         return employeeGender;
     }
 
-    public EmployeeRace getEmployeeRace () {
-
+    public String getEmployeeRace() {
         return employeeRace;
     }
 
-    public EmployeeContact getEmployeeContact() {
+    public String getEmployeePosition() {
+        return employeePosition;
+    }
+
+    public String getEmployeeContact() {
         return employeeContact;
     }
 
-    public Position getPosition() {
-        return position;
+    public String getEmployeeEmail() {
+        return employeeEmail;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeId=" + employeeId +
+                "employeeId='" + employeeId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", employeeGender='" + employeeGender + '\'' +
                 ", employeeRace='" + employeeRace + '\'' +
+                ", employeePosition='" + employeePosition + '\'' +
                 ", employeeContact='" + employeeContact + '\'' +
-                ", position='" + position + '\'' +
+                ", employeeEmail='" + employeeEmail + '\'' +
                 '}';
     }
 
     public static class Builder {
 
-        private String employeeId, firstName, lastName;
-        private EmployeeGender employeeGender;
-        private EmployeeRace employeeRace;
-        private EmployeeContact employeeContact;
-        private Position position;
+        private String employeeId, firstName, lastName, employeeGender, employeeRace, employeePosition, employeeContact, employeeEmail;
 
         public Builder setFirstName(String firstName) {
             this.firstName = firstName;
@@ -117,26 +114,32 @@ public class Employee implements Serializable {
             return this;
         }
 
-        public Builder setEmployeeGender(EmployeeGender employeeGender) {
+        public Builder setEmployeeGender(String employeeGender) {
             this.employeeGender = employeeGender;
 
             return this;
         }
 
-        public Builder setEmployeeRace (EmployeeRace employeeRace) {
+        public Builder setEmployeeRace(String employeeRace) {
             this.employeeRace = employeeRace;
 
             return this;
         }
 
-        public Builder setEmployeeContact(EmployeeContact employeeContact) {
-            this.employeeContact = employeeContact;
+        public Builder setEmployeePosition(String employeePosition) {
+            this.employeePosition = employeePosition;
 
             return this;
         }
 
-        public Builder setPosition(Position position) {
-            this.position = position;
+        public Builder setEmployeeContact(String employeeContact) {
+            this.employeeContact = employeeContact;
+            return this;
+
+        }
+
+        public Builder setEmployeeEmail(String employeeEmail) {
+            this.employeeEmail = employeeEmail;
 
             return this;
         }
@@ -152,8 +155,9 @@ public class Employee implements Serializable {
             this.lastName = employee.lastName;
             this.employeeGender = employee.employeeGender;
             this.employeeRace = employee.employeeRace;
+            this.employeePosition = employee.employeePosition;
             this.employeeContact = employee.employeeContact;
-            this.position = employee.position;
+            this.employeeEmail = employee.employeeEmail;
 
             return this;
         }
