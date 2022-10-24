@@ -15,6 +15,8 @@ import java.io.Serializable;
 @Table(name = "Ingredients")
 
 public class Ingredients implements Serializable {
+
+    @Id
     private String ingredientName;
     private String ingredientType;
     private int amount;
