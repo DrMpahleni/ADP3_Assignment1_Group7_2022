@@ -6,8 +6,8 @@ package za.ac.cput.domain.supplier;
    Due date: 07 August 2022
  */
 
-
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
