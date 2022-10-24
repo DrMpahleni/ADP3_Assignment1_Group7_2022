@@ -7,14 +7,27 @@ package za.ac.cput.factory.contact;
   */
 
 import za.ac.cput.domain.contact.ContactType;
+import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.util.genericHelper;
 
 public class ContactTypeFactory {
-    public static ContactType createContactType(String Id, String name){
+    public static ContactType createContactType(String Id, String name) {
         String ID = genericHelper.generateId();
-        ContactType contactType = new ContactType.Builder().setId(Id)
+        ContactType contactType = new ContactType.Builder()
+                .setId(Id)
                 .setName(name)
                 .build();
         return contactType;
     }
 }
+    /*public static EmployeeContact build(String id, String name){
+        if(id.isEmpty() || id == null)
+            throw new IllegalArgumentException("Enter Id");
+        if(name.isEmpty() || name == null)
+            throw new IllegalArgumentException(" Enter name");
+        return new ContactType.Builder().id(id)
+                .name(name)
+                .build();
+    }
+}
+*/
