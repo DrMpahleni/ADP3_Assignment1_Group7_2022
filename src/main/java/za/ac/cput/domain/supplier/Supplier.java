@@ -19,6 +19,7 @@ public class Supplier implements Serializable {
 
     @Id
     private int supplierID;
+
     @Column(length = 25,name = "supplier Name")
     private String supplierName;
     @Column(length = 25,name = "supplier Email ")
