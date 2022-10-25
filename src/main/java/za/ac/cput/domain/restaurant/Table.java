@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-@javax.persistence.Table(name = "Table")
+@javax.persistence.Table(name = "restaurant_Table")
 
 
 public class Table implements Serializable {

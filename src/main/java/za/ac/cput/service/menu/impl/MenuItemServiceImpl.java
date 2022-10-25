@@ -13,12 +13,16 @@ import java.util.Optional;
 @Service
 public class MenuItemServiceImpl implements MenuItemService {
 
-    private static MenuItemServiceImpl  service=null;
+    //private static MenuItemServiceImpl  service=null;
     private IMenuItemRespository repository;
 
     @Autowired
     public MenuItemServiceImpl(IMenuItemRespository repository) {
         this.repository = repository;
+    }
+
+    public MenuItemServiceImpl () {
+
     }
 
     @Override

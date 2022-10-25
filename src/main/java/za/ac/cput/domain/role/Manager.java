@@ -17,7 +17,7 @@ public class Manager implements Serializable {
     @Id
     private int managerID;
 
-    @Column(name = "position ID")
+    @Column(name = "positionID")
     private int positionID;
 
     @Column(length = 25,name = "firstName")
