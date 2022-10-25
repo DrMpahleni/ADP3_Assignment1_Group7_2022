@@ -8,7 +8,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
   datasource:
-    url: jdbc:mysql://localhost:3306/restaurantManagementTestSystem?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/thechowloungedatabase?createDatabaseIfNotExist=true
     username: root
     password: password
 
