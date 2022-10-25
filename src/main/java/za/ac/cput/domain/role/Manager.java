@@ -4,7 +4,7 @@ package za.ac.cput.domain.role;
 /* manager.java
 Entity for the Manager
 Author: Bongisa Mpahleni (216205999)
-Date: 02 April 2022
+Date: 02 April 2022ADP
 */
 
 import javax.persistence.*;
@@ -16,15 +16,19 @@ public class Manager implements Serializable {
 
     @Id
     private int managerID;
-    @Column(name = "position ID")
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @Column(name = "positionID")
     private int positionID;
+
     @Column(length = 25,name = "firstName")
     private String fisrtName;
+
     @Column(length = 25,name = "LastName")
     private String lastName;
+
     @Column(length = 10,name = "photoNo")
     private String phoneNo;
+
     @Column(length = 25,name = "emailAddress")
     private String emailAddress;
 

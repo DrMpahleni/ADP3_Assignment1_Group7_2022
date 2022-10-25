@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.domain.contact.ContactType;
 import za.ac.cput.repository.contactType.IContactTypeRepository;
 import za.ac.cput.service.contactType.IContactTypeService;
+
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -37,8 +39,8 @@ public class ContactTypeServiceImpl implements IContactTypeService {
     }
 
     @Override
-    public Set<ContactType> getAll() {
-        return contactTypeRepository.getAll();
+    public List<ContactType> findAll() {
+        return this.contactTypeRepository.findAll();
     }
 
     @Override

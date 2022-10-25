@@ -4,15 +4,18 @@ package za.ac.cput.factory.gender;
  Author: Vuyisa Nkangana(218192215)
  Due Date: 10 April 2022
   */
+import org.hibernate.internal.util.StringHelper;
+import za.ac.cput.domain.gender.EmployeeGender;
 import za.ac.cput.domain.gender.Gender;
 import za.ac.cput.util.genericHelper;
 
 public class GenderFactory {
     public static Gender createGender(String Id, String name){
-        String ID = genericHelper.generateId();
-        Gender gender = new Gender.Builder().setId(Id)
-                .setName(name)
-                .build();
-        return gender;
+       String ID = genericHelper.generateId();
+       Gender gender = new Gender.Builder()
+               .setId(Id)
+               .setName(name)
+               .build();
+       return gender;
     }
 }

@@ -9,7 +9,7 @@ import za.ac.cput.util.genericHelper;
 
 public class EmployeeGenderFactory {
     public static EmployeeGender createEmployeeGender(String employeeId, String genderId){
-        String employeeID = genericHelper.generateId();
+        String genderID = genericHelper.generateId();
         EmployeeGender employeeGender = new EmployeeGender.Builder()
                 .setEmployeeId(employeeId)
                 .setGenderId(genderId)

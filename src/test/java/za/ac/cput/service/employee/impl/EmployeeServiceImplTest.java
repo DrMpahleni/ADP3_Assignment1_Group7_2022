@@ -3,7 +3,11 @@ package za.ac.cput.service.employee.impl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import za.ac.cput.domain.contact.EmployeeContact;
 import za.ac.cput.domain.employee.Employee;
+import za.ac.cput.domain.employee.Position;
+import za.ac.cput.domain.gender.EmployeeGender;
+import za.ac.cput.domain.race.EmployeeRace;
 import za.ac.cput.service.employee.EmployeeService;
 
 import java.util.List;
@@ -18,6 +22,11 @@ class EmployeeServiceImplTest {
             .setEmployeeId("001")
             .setLastName("John")
             .setLastName("Doe")
+            .setEmployeeGender("Male")
+            .setEmployeeRace("Coloured")
+            .setEmployeePosition("Waiter")
+            .setEmployeeContact("0215556884")
+            .setEmployeeEmail("john@gmail.com")
             .build();
 
     @Autowired private EmployeeService service;

@@ -19,13 +19,15 @@ public class Supplier implements Serializable {
 
     @Id
     private int supplierID;
-    @Column(length = 25,name = "supplier Name")
+
+
+    @Column(length = 25,name = "supplierName")
     private String supplierName;
-    @Column(length = 25,name = "supplier Email ")
+    @Column(length = 25,name = "supplierEmail ")
     private String supplierEmail;
-    @Column(length = 10,name = "supplier phone")
+    @Column(length = 10,name = "supplierPhone")
     private String supplierPhone;
-    @Column(length = 25,name = "supplier address ")
+    @Column(length = 25,name = "supplierAddress ")
     private String supplierAddress;
 
     protected Supplier() {
