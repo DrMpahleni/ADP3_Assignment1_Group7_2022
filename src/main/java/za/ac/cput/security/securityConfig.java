@@ -82,6 +82,31 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, "**/gender/update").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.GET, "**/gender/all").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.DELETE, "**/gender/delete").hasRole("ADMIN")
+                //EmployeeRace configuration
+                .antMatchers(HttpMethod.POST, "**/employeeRace/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/employeeRace/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/employeeRace/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/employeeRace/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/employeeRace/delete").hasRole("ADMIN")
+                //Race configuration
+                .antMatchers(HttpMethod.POST, "**/race/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/race/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/race/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/race/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/race/delete").hasRole("ADMIN")
+                //Order configuration
+                .antMatchers(HttpMethod.POST, "**/order/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/order/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/order/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/order/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/order/delete").hasRole("ADMIN")
+                //Ingredients configuration
+                .antMatchers(HttpMethod.POST, "**/ingredients/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/ingredients/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/ingredients/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/ingredients/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/ingredients/delete").hasRole("ADMIN")
+
                 .and()
                 .csrf().disable()
                 .formLogin().disable();
