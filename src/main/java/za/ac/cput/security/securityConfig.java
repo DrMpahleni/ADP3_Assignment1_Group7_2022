@@ -53,11 +53,35 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"**/job/all").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE,"**/job/delete").hasRole("ADMIN")
                 //Payment configuration
+                .antMatchers(HttpMethod.POST, "**/employeeContact/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/employeeContact/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/employeeContact/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/employeeContact/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/employeeContact/delete").hasRole("ADMIN")
+                //Payment configuration
+                .antMatchers(HttpMethod.POST, "**/contactType/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/contactType/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/contactType/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/contactType/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/contactType/delete").hasRole("ADMIN")
+                //Payment configuration
                 .antMatchers(HttpMethod.POST, "**/payment/save").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.GET, "**/payment/read").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.PUT, "**/payment/update").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.GET, "**/payment/all").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.DELETE, "**/payment/delete").hasRole("ADMIN")
+                //Payment configuration
+                .antMatchers(HttpMethod.POST, "**/employeeGender/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/employeeGender/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/employeeGender/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/employeeGender/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/employeeGender/delete").hasRole("ADMIN")
+                //Payment configuration
+                .antMatchers(HttpMethod.POST, "**/gender/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/gender/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/gender/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/gender/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/gender/delete").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
                 .formLogin().disable();
