@@ -1,79 +1,19 @@
 /*
-ReservationRepository.java
-Author: Felecia Zweni(218330189)
+IReservationRepository.java
+Author: Felecia Zweni (218330189)
+Date: August 2022
  */
 
 package za.ac.cput.repository.reservation;
 
-
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import za.ac.cput.domain.restaurant.Reservation;
-import za.ac.cput.repository.reservation.impl.IReservationRepository;
+import za.ac.cput.repository.IRepository;
 
-import java.util.HashSet;
 import java.util.Set;
 
-public class ReservationRepository implements IReservationRepository {
+public interface ReservationRepository extends JpaRepository<Reservation, String> {
 
-    private static ReservationRepository repository = null;
-    private Set<Reservation> reservationDB = null;
+    public Set<Reservation> getAll();
 
-    private ReservationRepository() {
-        reservationDB = new HashSet<Reservation>();
     }
-
-    public static ReservationRepository getRepository() {
-        if (repository == null) {
-            repository = new ReservationRepository();
-        }
-        return repository;
-    }
-
-
-    public Reservation create(Reservation reservation) {
-        boolean success = reservationDB.add(reservation);
-        if (!success)
-            return null;
-        return reservation;
-    }
-
-
-    public Reservation read(String name) {
-        Reservation reservation = reservationDB.stream()
-                .filter(e -> e.getName().equals(name))
-                .findAny()
-                .orElse(null);
-        return reservation;
-    }
-
-
-    public Reservation update(Reservation reservation){
-        Reservation oldReservation = read(reservation.getName());
-        if(oldReservation != null) {
-            reservationDB.remove(oldReservation);
-            reservationDB.add(reservation);
-            return reservation;
-        }
-        return null;
-    }
-
-
-    public boolean delete(String name) {
-        Reservation reservationToDelete = read(name);
-        if(reservationToDelete == null)
-            return false;
-        reservationDB.remove(reservationToDelete);
-        return true;
-    }
-
-    public Set<Reservation> getAll(){
-        return reservationDB;
-    }
-
-
-
-
-
-
-
-}

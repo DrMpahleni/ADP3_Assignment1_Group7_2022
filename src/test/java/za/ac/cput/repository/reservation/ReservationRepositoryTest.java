@@ -9,49 +9,61 @@ Date: August 2022
 package za.ac.cput.repository.reservation;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.domain.restaurant.Reservation;
 import za.ac.cput.factory.restaurant.ReservationFactory;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class ReservationRepositoryTest {
 
-    private static ReservationRepository repository = ReservationRepository.getRepository();
-    private static Reservation reservation = ReservationFactory.createReservation("Julia", 1000, "12/05/2022");
+    private final Reservation reservation = new Reservation.Builder()
+            .setDate("01 December 2022")
+            .setName("Lihle")
+            .setAmount(200)
+            .build();
+
+    @Autowired
+    private ReservationRepository repository;
 
     @Test
-    void create() {
-        Reservation created = repository.create(reservation);
-        assertEquals(ReservationRepository.getRepository(),created.getName());
-        System.out.println("Create: " + created);
+    void save() {
+        Reservation saved = repository.save(reservation);
+        assertNotNull(saved);
+        assertSame(saved, reservation);
     }
 
     @Test
     void read() {
-        Reservation read = repository.read(reservation.getName());
-        assertNotNull(read);
-        System.out.println("Read: " + read);
-    }
-
-    @Test
-    void update() {
-        Reservation updated = new Reservation.Builder().copy(reservation).setName("Laz").build();
-        assertNotNull(repository.update(updated));
-        System.out.println("Update: " + updated);
+        Reservation saved = repository.save(reservation);
+        Optional<Reservation> read = repository.findById(saved.getName());
+        String output = String.valueOf(read.get());
+        assertAll(
+                () -> assertTrue(read.isPresent()),
+                () -> assertSame(reservation, output));
     }
 
     @Test
     void delete() {
-        boolean deleted = repository.delete(reservation.getName());
-        assertNotNull(deleted);
-        System.out.println("Delete: " + deleted);
+        Reservation saved = repository.save(reservation);
+        List<Reservation> getAll = repository.findAll();
+        repository.delete(saved);
+        assertEquals(0, getAll.size());
     }
 
     @Test
     void getAll() {
+        repository.save(reservation);
+        List <Reservation> getAll = repository.findAll();
+        assertEquals(1, getAll.size());
         System.out.println("Show all data: ");
         System.out.println(repository.getAll());
     }
+
 
 }

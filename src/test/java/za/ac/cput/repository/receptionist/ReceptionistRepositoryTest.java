@@ -8,50 +8,60 @@ Date: August 2022
 package za.ac.cput.repository.receptionist;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.domain.role.Receptionist;
 
 import za.ac.cput.factory.role.ReceptionistFactory;
+import za.ac.cput.repository.table.TableRepository;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class ReceptionistRepositoryTest {
 
-    private static ReceptionistRepository repository = ReceptionistRepository.getRepository();
-    private static Receptionist receptionist = ReceptionistFactory.createReceptionist("1200",1200);
+    private final Receptionist receptionist = new Receptionist.Builder()
+            .setReceptionId("001")
+            .setPositionId(2)
+            .build();
+
+    @Autowired
+    private ReceptionistRepository repository;
 
     @Test
-    void create() {
-        Receptionist created = repository.create(receptionist);
-        assertEquals(receptionist.getReceptionId(),created.getReceptionId());
-        System.out.println("Create: " + created);
+    void save() {
+        Receptionist saved = repository.save(receptionist);
+        assertNotNull(saved);
+        assertSame(saved, receptionist);
     }
 
     @Test
     void read() {
-        Receptionist read = repository.read(receptionist.getReceptionId());
-        assertNotNull(read);
-        System.out.println("Read: " + read);
-    }
-
-   @Test
-    void update() {
-        Receptionist updated = new Receptionist.Builder().copy(receptionist).setReceptionId("300").build();
-        assertNotNull(repository.update(updated));
-        System.out.println("Update: " + updated);
+        Receptionist saved = repository.save(receptionist);
+        Optional<Receptionist> read = repository.findById(saved.getReceptionId());
+        String output = String.valueOf(read.get());
+        assertAll(
+                () -> assertTrue(read.isPresent()),
+                () -> assertSame(receptionist, output)
+        );
     }
 
     @Test
     void delete() {
-        boolean deleted = repository.delete(receptionist.getReceptionId());
-        assertNotNull(deleted);
-        System.out.println("Delete: " + deleted);
+        Receptionist saved = repository.save(receptionist);
+        List<Receptionist> getAll = repository.findAll();
+        repository.delete(saved);
+        assertEquals(0, getAll.size());
     }
 
     @Test
     void getAll() {
-        System.out.println("Show all data: ");
-        System.out.println(repository.getAll());
+        repository.save(receptionist);
+        List <Receptionist> getAll = repository.findAll();
+        assertEquals(1, getAll.size());
+
     }
 
 }
