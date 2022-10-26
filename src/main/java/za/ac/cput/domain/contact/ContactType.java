@@ -14,7 +14,7 @@ import java.util.Objects;
  Due Date: 10 April 2022
   */
 @Entity
-@Table(name = "Employee")
+@Table(name = "ContactType")
 public class ContactType implements Serializable {
     @Id
 private String id, name;
