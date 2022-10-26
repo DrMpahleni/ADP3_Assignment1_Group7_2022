@@ -106,6 +106,30 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, "**/ingredients/update").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.GET, "**/ingredients/all").hasRole("USER, ADMIN")
                 .antMatchers(HttpMethod.DELETE, "**/ingredients/delete").hasRole("ADMIN")
+                // Reservation configuration
+                .antMatchers(HttpMethod.POST, "**/reservation/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/reservation/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/reservation/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/reservation/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/reservation/delete").hasRole("ADMIN")
+                // Customer configuration
+                .antMatchers(HttpMethod.POST, "**/customer/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/customer/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/customer/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/customer/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/customer/delete").hasRole("ADMIN")
+                // Receptionist configuration
+                .antMatchers(HttpMethod.POST, "**/receptionist/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/receptionist/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/receptionist/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/receptionist/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/receptionist/delete").hasRole("ADMIN")
+                // Table configuration
+                .antMatchers(HttpMethod.POST, "**/table/save").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/table/read").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.PUT, "**/table/update").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.GET, "**/table/all").hasRole("USER, ADMIN")
+                .antMatchers(HttpMethod.DELETE, "**/table/delete").hasRole("ADMIN")
 
                 .and()
                 .csrf().disable()
